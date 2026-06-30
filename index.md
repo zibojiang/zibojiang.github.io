@@ -6,8 +6,8 @@ comments: true
 cover-img:
     - "assets/img/sunsetberkely.jpg": "California, United States (2024-03)" 
     - "assets/img/Highlands of Scotland.jpg": "The Highlands of Scotland, United Kingdom (2025-01)" 
-    - "assets/img/Luss": "Luss, United Kingdom (2025-01)" 
-    - "assets/img/Matrouh.DNG": "Matrouh, Egypt (2026-02)" 
+    - "assets/img/Luss.jepg": "Luss, United Kingdom (2025-01)" 
+    - "assets/img/Matrouh.jepg": "Matrouh, Egypt (2026-02)" 
 ---
 
 ### About Me
