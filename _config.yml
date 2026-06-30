@@ -6,10 +6,10 @@
 # --- Required options --- #
 
 # Name of website
-title: Zhuoran Song
+title: Zibo Jiang
 
 # Your name to show in the footer
-author: Zhuoran Song
+author: Zibo Jiang
 
 # --- List of links in the navigation bar --- #
 
@@ -44,9 +44,9 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "songzhuoran@sjtu.edu.cn"
+  email: "zibojiang@ucsd.edu"
   google-scholar: "citations?user=LgHi-gQAAAAJ"
-  github: songzhuoran
+  github: zibojiang
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
 #  acebook: deanattali
 #  twitter: daattali
@@ -87,7 +87,6 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "songzhuoran.github.io"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -105,7 +104,7 @@ post_search: false
 edit_page_button: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "songzhuoran,zhuoran,song,homepage,scholar,cs,computer science,sjtu"
+keywords: "zibojiang,zibo,jiang,homepage,scholar,ee,electrical and computer engineering,ucsd,ecnu"
 
 # --- Colours / background image --- #
 
