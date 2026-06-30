@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Zhuoran Song
-subtitle: "Associate Professor in the Department of Computer Science and Engineering @ Shanghai Jiao Tong University"
+title: Zibo Jiang
+subtitle: "MS student in the Department of Computer Science and Engineering @ UCSD"
 comments: true
 cover-img:
     - "assets/img/sailimuhu.jpg": "新疆，赛里木湖 (2021-09)" 
