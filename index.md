@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Zibo Jiang
-subtitle: "MS student in the Department of Computer Science and Engineering @ UCSD"
+subtitle: "M.S. student in Integrated Circuits and Systems @ UCSD"
 comments: true
 cover-img:
-    - "assets/img/sailimuhu.jpg": "新疆，赛里木湖 (2021-09)" 
+    - "assets/img/Highlands of Scotland.jpg": "The Highlands of Scotland, United Kingdom (2025-01)" 
     - "assets/img/kanasi2.jpg": "新疆，喀纳斯 (2021-09)" 
     - "assets/img/tianshan.jpg": "新疆，天山 (2021-09)" 
     - "assets/img/sunrise.jpg": "内蒙古，额济纳旗，居延海 (2020-10)" 
