@@ -35,4 +35,4 @@ My research interests include **AI Hardware accelerators and architectures**, Di
   </div>
 </div>
 
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=4226ed&w=250&t=tt&d=RqR0-tM_DVHQvWiaE4Tf3z1GNHZmopCIm2IAW2lkG3k&co=fce593'></script>
+<!-- <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=4226ed&w=250&t=tt&d=RqR0-tM_DVHQvWiaE4Tf3z1GNHZmopCIm2IAW2lkG3k&co=fce593'></script> -->
