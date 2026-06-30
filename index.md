@@ -4,24 +4,10 @@ title: Zibo Jiang
 subtitle: "M.S. student in Integrated Circuits and Systems @ UCSD"
 comments: true
 cover-img:
+    - "assets/img/sunsetberkely.jpg": "California, United States (2024-03)" 
     - "assets/img/Highlands of Scotland.jpg": "The Highlands of Scotland, United Kingdom (2025-01)" 
-    - "assets/img/kanasi2.jpg": "新疆，喀纳斯 (2021-09)" 
-    - "assets/img/tianshan.jpg": "新疆，天山 (2021-09)" 
-    - "assets/img/sunrise.jpg": "内蒙古，额济纳旗，居延海 (2020-10)" 
-    - "assets/img/lake.jpg": "内蒙古，额济纳旗，居延海 (2020-10)" 
-    - "assets/img/ejinaqi.jpg": "内蒙古，额济纳旗，胡杨林 (2020-10)" 
-    - "assets/img/moshigongyuan.jpg": "四川，墨石公园 (2020-04)" 
-    - "assets/img/daocheng.jpg": "四川，稻城，稻城亚丁 (2020-04)" 
-    - "assets/img/italy.jpeg": "意大利，佛罗伦萨 (2019-10)" 
-    - "assets/img/venice.jpeg": "意大利，威尼斯 (2020-10)" 
-    - "assets/img/germany.jpg": "德国，莱茵河 (2023-04)" 
-    - "assets/img/cologne.jpg": "德国，科隆大教堂 (2023-04)" 
-    - "assets/img/cologne2.jpg": "德国，亚琛 (2023-04)" 
-    - "assets/img/Netherlands1.jpg": "荷兰，阿姆斯特丹 (2023-04)" 
-    - "assets/img/Netherlands2.jpg": "荷兰，阿姆斯特丹 (2023-04)" 
-    - "assets/img/Netherlands3.jpg": "荷兰，阿姆斯特丹 (2023-04)"
-    - "assets/img/spain2.jpg": "西班牙，巴塞罗那 (2024-08)" 
-    - "assets/img/austin.jpg": "美国，奥斯汀 (2024-11)" 
+    - "assets/img/Luss": "Luss, United Kingdom (2025-01)" 
+    - "assets/img/Matrouh.DNG": "Matrouh, Egypt (2026-02)" 
 ---
 
 ### About Me
