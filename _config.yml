@@ -5,11 +5,10 @@ author: Zibo Jiang
 
 # --- List of links in the navigation bar --- #
 navbar-links:
-  Honors: "awards"
-  News: "news"
-  Teach: "teach"
-  Research Group: "researchgroup"
   About Me: "aboutme"
+  News: "news"
+  Projects: "projects"
+  Honors: "awards"
   Blogs: "blogs"
   
 # --- Logo --- #
@@ -147,4 +146,5 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  
+site-css:
+  - "/assets/css/home-about.css"
