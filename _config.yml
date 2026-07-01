@@ -65,7 +65,7 @@ keywords: "zibojiang,zibo,jiang,homepage,scholar,ee,electrical and computer engi
 # --- Colours / background image --- #
 navbar-col: "#faf9f7"         #导航栏的背景颜色#
 navbar-text-col: "#3d3929"    #导航栏里文字的背景颜色#
-navbar-border-col: "#rgba(194, 113, 79, 0.2)"  #导航栏下方横线的背景颜色#
+navbar-border-col: "rgba(194, 113, 79, 0.2)"  #导航栏下方横线的背景颜色#
 page-col: "#faf9f7"           #大背景颜色#
 text-col: "#404040"           #正文里文字的背景颜色#
 link-col: "#008AFF"           #超链接的背景颜色#
