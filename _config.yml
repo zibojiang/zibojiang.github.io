@@ -63,15 +63,15 @@ edit_page_button: true
 keywords: "zibojiang,zibo,jiang,homepage,scholar,ee,electrical and computer engineering,ucsd,ecnu"
 
 # --- Colours / background image --- #
-navbar-col: "#FFCC99"
-navbar-text-col: "#FFFFFF"
-navbar-border-col: "#FFCCCC"
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#99CCCC"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
+navbar-col: "#faf9f7"         #导航栏的背景颜色#
+navbar-text-col: "#3d3929"    #导航栏里文字的背景颜色#
+navbar-border-col: "#rgba(194, 113, 79, 0.2)"  #导航栏下方横线的背景颜色#
+page-col: "#faf9f7"           #大背景颜色#
+text-col: "#404040"           #正文里文字的背景颜色#
+link-col: "#008AFF"           #超链接的背景颜色#
+hover-col: "#99CCCC"          #鼠标放上，链接变成背景颜色#
+footer-col: "#faf9f7"         #页脚的背景颜色#
+footer-text-col: "#777777"      
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
 
