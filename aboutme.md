@@ -4,7 +4,7 @@ title: About me
 comments: true
 ---
 
-div style="text-align: center; margin-bottom: 2rem;">
+<div style="text-align: center; margin-bottom: 2rem;">
   <img src="/assets/img/aboutme.jpg" alt="Zibo Jiang" style="width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
