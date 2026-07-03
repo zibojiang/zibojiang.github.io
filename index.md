@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zibo Jiang
-subtitle: "M.S. student in Integrated Circuits and Systems @ UCSD"
+subtitle: "M.S. student in Electronics Circuits and Systems @ UCSD"
 comments: true
 cover-img:
     - "assets/img/sunsetberkeley.JPG": "California, United States (2024-03)" 
