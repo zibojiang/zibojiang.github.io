@@ -6,17 +6,11 @@ var BeautifulJekyllJS = {
   numImgs : null,
 
   init : function() {
-    setTimeout(BeautifulJekyllJS.initNavbar, 10);
+    setTimeout(BeautifulJekyllJS.updateNavbarState, 10);
 
-    // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-        }
-        BeautifulJekyllJS.initNavbar();
-    });
+    // Keep the homepage navbar over the hero until the entire image has left
+    // the viewport. Other pages retain the theme's original 50px threshold.
+    $(window).on('scroll resize', BeautifulJekyllJS.updateNavbarState);
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {
@@ -34,12 +28,27 @@ var BeautifulJekyllJS = {
     BeautifulJekyllJS.initSearch();
   },
 
+  updateNavbarState : function() {
+    const navbar = $('.navbar');
+    let shouldShorten = $(window).scrollTop() > 50;
+
+    if (navbar.hasClass('navbar-overlay')) {
+      const hero = document.querySelector('.header-section .intro-header.big-img');
+      shouldShorten = hero
+        ? hero.getBoundingClientRect().bottom <= 0
+        : shouldShorten;
+    }
+
+    navbar.toggleClass('top-nav-short', shouldShorten);
+    BeautifulJekyllJS.initNavbar();
+  },
+
   initNavbar : function() {
     const navbar = $('.navbar');
 
     // The homepage navbar sits on top of the hero image. Keep it light-on-dark
     // while the image is visible, then switch back to the regular light theme
-    // after scrolling or when the mobile menu is expanded.
+    // after the hero leaves the viewport or when the mobile menu is expanded.
     if (navbar.hasClass('navbar-overlay')) {
       const showImageBehindNavbar =
         !navbar.hasClass('top-nav-short') &&
