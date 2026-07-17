@@ -34,24 +34,9 @@ var BeautifulJekyllJS = {
 
     if (navbar.hasClass('navbar-overlay')) {
       const hero = document.querySelector('.header-section .intro-header.big-img');
-      if (hero) {
-        const heroRect = hero.getBoundingClientRect();
-        const heroHeight = Math.max(heroRect.height, 1);
-        const scrollProgress = Math.min(
-          Math.max(-heroRect.top / heroHeight, 0),
-          1
-        );
-
-        navbar[0].style.setProperty(
-          '--navbar-solid-progress',
-          scrollProgress.toFixed(3)
-        );
-        navbar[0].style.setProperty(
-          '--navbar-solid-percent',
-          (scrollProgress * 100).toFixed(1) + '%'
-        );
-        shouldShorten = heroRect.bottom <= 0;
-      }
+      shouldShorten = hero
+        ? hero.getBoundingClientRect().bottom <= 0
+        : shouldShorten;
     }
 
     navbar.toggleClass('top-nav-short', shouldShorten);
@@ -61,14 +46,11 @@ var BeautifulJekyllJS = {
   initNavbar : function() {
     const navbar = $('.navbar');
 
-    // Keep light controls while the hero dominates the navbar, then switch to
-    // dark controls once the scroll-linked solid layer is more than half shown.
+    // The homepage navbar sits on top of the hero image. Keep it light-on-dark
+    // while the image is visible, then switch back to the regular light theme
+    // after the hero leaves the viewport or when the mobile menu is expanded.
     if (navbar.hasClass('navbar-overlay')) {
-      const solidProgress = parseFloat(
-        navbar[0].style.getPropertyValue('--navbar-solid-progress')
-      ) || 0;
       const showImageBehindNavbar =
-        solidProgress < 0.5 &&
         !navbar.hasClass('top-nav-short') &&
         !navbar.hasClass('top-nav-short-permanent') &&
         !navbar.hasClass('top-nav-expanded');
