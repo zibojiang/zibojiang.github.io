@@ -45,8 +45,8 @@ layout: null
   background: linear-gradient(
     180deg,
     rgb(0 0 0 / 48%) 0%,
-    rgb(0 0 0 / 18%) 10%,
-    rgb(0 0 0 / 0%) 100%
+    rgb(0 0 0 / 18%) 65%,
+    transparent 100%
   );
 }
 
