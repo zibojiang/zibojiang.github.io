@@ -1,5 +1,6 @@
 ---
 layout: page
+overlay-nav: true
 title: Zibo Jiang
 subtitle: "M.S. student in Electronic Circuits and Systems @ UCSD"
 share-title: "Zibo Jiang | UC San Diego"

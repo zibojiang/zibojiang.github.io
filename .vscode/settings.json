@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+      "**/_includes/*.html": "liquid",
+      "**/_layouts/*.html": "liquid",
+      "tags.html": "liquid",
+      "assets/404.html": "liquid",
+      "assets/css/beautifuljekyll.css": "liquid-css",
+      "assets/css/home-about.css": "liquid-css"
+    }
+  }

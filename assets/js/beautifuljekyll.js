@@ -15,14 +15,17 @@ var BeautifulJekyllJS = {
         } else {
             $(".navbar").removeClass("top-nav-short");
         }
+        BeautifulJekyllJS.initNavbar();
     });
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {
       $(".navbar").addClass("top-nav-expanded");
+      BeautifulJekyllJS.initNavbar();
     });
     $('#main-navbar').on('hidden.bs.collapse', function () {
       $(".navbar").removeClass("top-nav-expanded");
+      BeautifulJekyllJS.initNavbar();
     });
 
     // show the big header image
@@ -32,17 +35,33 @@ var BeautifulJekyllJS = {
   },
 
   initNavbar : function() {
+    const navbar = $('.navbar');
+
+    // The homepage navbar sits on top of the hero image. Keep it light-on-dark
+    // while the image is visible, then switch back to the regular light theme
+    // after scrolling or when the mobile menu is expanded.
+    if (navbar.hasClass('navbar-overlay')) {
+      const showImageBehindNavbar =
+        !navbar.hasClass('top-nav-short') &&
+        !navbar.hasClass('top-nav-short-permanent') &&
+        !navbar.hasClass('top-nav-expanded');
+
+      navbar.toggleClass('navbar-dark', showImageBehindNavbar);
+      navbar.toggleClass('navbar-light', !showImageBehindNavbar);
+      return;
+    }
+
     // Set the navbar-dark/light class based on its background color
-    const rgb = $('.navbar').css("background-color").replace(/[^\d,]/g,'').split(",");
+    const rgb = navbar.css("background-color").replace(/[^\d,]/g,'').split(",");
     const brightness = Math.round(( // http://www.w3.org/TR/AERT#color-contrast
       parseInt(rgb[0]) * 299 +
       parseInt(rgb[1]) * 587 +
       parseInt(rgb[2]) * 114
     ) / 1000);
     if (brightness <= 125) {
-      $(".navbar").removeClass("navbar-light").addClass("navbar-dark");
+      navbar.removeClass("navbar-light").addClass("navbar-dark");
     } else {
-      $(".navbar").removeClass("navbar-dark").addClass("navbar-light");
+      navbar.removeClass("navbar-dark").addClass("navbar-light");
     }
   },
 
