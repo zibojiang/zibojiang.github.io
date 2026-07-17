@@ -52,13 +52,19 @@ layout: null
 .navbar-custom.navbar-overlay:not(.top-nav-short):not(.top-nav-short-permanent):not(.top-nav-expanded) {
   border-bottom: 1px solid transparent !important;
   box-shadow: none !important;
-  background: linear-gradient(
+  background-color: transparent;
+  background-image: linear-gradient(
     180deg,
     rgb(0 0 0 / 48%) 0%,
-    rgb(0 0 0 / 18%) 55%,
-    rgb(0 0 0 / 0%) 82%,
+    rgb(0 0 0 / 18%) 35%,
+    rgb(0 0 0 / 6%) 55%,
+    rgb(0 0 0 / 0%) 70%,
     rgb(0 0 0 / 0%) 100%
   );
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% calc(100% - 6px);
+  background-clip: padding-box;
 }
 
 .navbar-custom.navbar-overlay:not(.top-nav-short):not(.top-nav-short-permanent):not(.top-nav-expanded) .navbar-brand,
