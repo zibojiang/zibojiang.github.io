@@ -35,7 +35,7 @@ layout: null
   padding-bottom: 0;
   transition:
     background-color 0.25s ease-in-out,
-    border-color 0.45s ease-in-out,
+    border-color 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
 }
 
