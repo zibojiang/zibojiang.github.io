@@ -70,7 +70,7 @@ layout: null
 .navbar-custom.navbar-overlay.top-nav-short,
 .navbar-custom.navbar-overlay.top-nav-short-permanent,
 .navbar-custom.navbar-overlay.top-nav-expanded {
-  background-color: {{ site.navbar-col | default: "#faf9f7" }};
+  background: {{ site.navbar-col | default: "#faf9f7" }};
   border-bottom-color: {{ site.navbar-border-col | default: "rgba(194, 113, 79, 0.2)" }};
   box-shadow: 0 0.125rem 0.75rem rgb(0 0 0 / 8%);
 }
@@ -92,20 +92,6 @@ nav.navbar-overlay ~ header.header-section .intro-header.big-img {
   min-height: 60svh;
   margin-top: 0 !important;
   overflow: hidden;
-}
-
-nav.navbar-overlay ~ header.header-section .intro-header.big-img .big-img-transition {
-  z-index: 0;
-}
-
-nav.navbar-overlay ~ header.header-section .intro-header.big-img > .container-md {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-nav.navbar-overlay ~ header.header-section .intro-header.big-img .img-desc {
-  z-index: 3;
 }
 
 @media (max-width: 767px) {
