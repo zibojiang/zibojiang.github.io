@@ -1,0 +1,26 @@
+.home-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .about-photo-wrapper {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .about-photo {
+    display: block;
+    width: min(300px, 100%);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  }
+  
+  @media (max-width: 767px) {
+    .home-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
