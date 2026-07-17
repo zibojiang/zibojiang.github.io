@@ -31,11 +31,22 @@ layout: null
 
 /* Homepage hero navigation overlay */
 .navbar-custom.navbar-overlay {
+  padding-top: 0;
+  padding-bottom: 0;
   transition:
-    padding 0.5s ease-in-out,
     background-color 0.25s ease-in-out,
     border-color 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
+}
+
+/* Keep the overlay navbar at its compact height in every scroll state. */
+.navbar-custom.navbar-overlay .navbar-brand-logo {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+}
+
+.navbar-custom.navbar-overlay .navbar-brand-logo img {
+  height: 2.5rem;
 }
 
 .navbar-custom.navbar-overlay:not(.top-nav-short):not(.top-nav-short-permanent):not(.top-nav-expanded) {
