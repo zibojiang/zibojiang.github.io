@@ -42,6 +42,12 @@ layout: null
   background-color: transparent;
   border-bottom-color: transparent;
   box-shadow: none;
+  background: linear-gradient(
+    180deg,
+    rgb(0 0 0 / 48%) 0%,
+    rgb(0 0 0 / 18%) 10%,
+    rgb(0 0 0 / 0%) 100%
+  );
 }
 
 .navbar-custom.navbar-overlay:not(.top-nav-short):not(.top-nav-short-permanent):not(.top-nav-expanded) .navbar-brand,
@@ -94,11 +100,6 @@ nav.navbar-overlay ~ header.header-section .intro-header.big-img::after {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgb(0 0 0 / 48%) 0%,
-    rgb(0 0 0 / 18%) 42%,
-    rgb(0 0 0 / 8%) 100%
   );
   pointer-events: none;
 }
