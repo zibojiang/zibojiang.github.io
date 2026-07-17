@@ -3,6 +3,11 @@ title: Zibo Jiang
 # Your name to show in the footer
 author: Zibo Jiang
 
+# Production site URL
+url: "https://zibojiang.github.io"
+baseurl: ""
+language: "en"
+
 # --- List of links in the navigation bar --- #
 navbar-links:
   About Me: "aboutme"
@@ -114,7 +119,7 @@ highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 20
 kramdown:
-input: GFM
+  input: GFM
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
