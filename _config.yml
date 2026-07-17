@@ -90,7 +90,7 @@ mobile-theme-col: "#0085A1"
 # See more details about giscus and each of the following parameters at https://giscus.app
 #giscus:
  #hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
- #repository: zibojiang/zibojiang.github.io # GitHub username/repository eg. "daattali/beautiful-jekyll"
+ #repository: zibojiang/zibojiang.github.io # GitHub username/repository eg. "username/repository"
  #repository-id: R_kgDOHq7qCQ # ID of your repository, retrieve this info from https://giscus.app
  #category: Announcements # Category name of your GitHub Discussion posts
  #category-id: DIC_kwDOHq7qCc4CQREd # ID of your category, retrieve this info from https://giscus.app
