@@ -2,6 +2,8 @@
 layout: page
 title: Zibo Jiang
 subtitle: "M.S. student in Electronics Circuits and Systems @ UCSD"
+share-description: "Zibo Jiang (江子博) is an incoming M.S. student at UC San Diego, interested in AI hardware accelerators, digital IC design, RTL, and FPGA systems."
+share-img: "/assets/img/aboutme.JPG"
 comments: true
 cover-img:
     - "assets/img/sunsetberkeley.JPG": "California, United States (2024-03)" 
