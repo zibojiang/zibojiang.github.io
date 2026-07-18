@@ -22,6 +22,11 @@ var BeautifulJekyllJS = {
       BeautifulJekyllJS.initNavbar();
     });
 
+    // Close the mobile menu after choosing a homepage section anchor.
+    $('#main-navbar a[href^="/#"]').on('click', function () {
+      $('#main-navbar').collapse('hide');
+    });
+
     // show the big header image
     BeautifulJekyllJS.initImgs();
 

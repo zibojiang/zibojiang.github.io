@@ -14,29 +14,34 @@ cover-img:
     - "assets/img/Matrouh.jpeg": "Matrouh, Egypt (2026-02)" 
 ---
 
-### About Me
-Hi! I'm Zibo Jiang (江子博), an M.S. student in the Electronic Circuits and Systems track at the University of California, San Diego (UCSD), Fall 2026. I earned my B.Eng. in Electrical Engineering at East China Normal University, Shanghai, China in 2026. 
+<section class="home-section" id="about" markdown="1">
 
-My research interests include **AI Hardware accelerators and architectures**, Digital Integrated Circuits Design. I work on the end-to-end flow for AI hardware systems, bridging the gap between algorithms and physical implementation—from neural network modeling to RTL design and FPGA prototyping. Cool！
+## About Me
 
-<!-- "My research interests include HW/SW co-design for AI accelerators, digital integrated circuit design with an emphasis on compute-in-memory (CIM) paradigms, and domain-specific architectures. I work on the end-to-end flow for AI hardware systems, bridging the gap between algorithms and physical implementation—from neural network modeling to RTL design and FPGA prototyping." -->
+{% include home/about.md show_details=true %}
 
-<!-- Genhao Zhang is a Master’s candidate in Electrical Engineering at Columbia University with a top-tier Bachelor’s in Microelectronic Science and Engineering from Fudan University. With 1+ year of focused research experience in hardware acceleration, analog/mixed-signal (AMS) circuits, and multimodal machine learning, he delivered key results: optimizing Transformer models for 2.35×-9.31× speedup via FPGA architectures, building the 3000+ sample AMSnet-KG dataset/AMSgen framework, and proposing a new VQA framework. Proficient in C/C++/Python/Verilog, PyTorch, and FPGA design, he holds honors like Columbia’s Tesla Scholar and Fudan’s Outstanding Graduate, and led 15+ university initiatives as Fudan Student Union Practice Department Associate Director.-->
+</section>
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 2rem;">
-  <div style="flex: 1 1 45%;">
-    ### Research Interests
-    * **Hardware Accelerators** (CNNs, Memristor CIM)
-    * **Domain-Specific Architectures**
-    * **Hardware/Software Co-design** 
-    * **Digital IC & FPGA Development**
-  </div>
-  <div style="flex: 1 1 45%;">
-    ### Education
-    * **M.S. in Computer Engineering**, UC San Diego (Expected Fall 2026)
-    * **B.Eng. in Electronic Information**, East China Normal University (Sep 2022 - Jul 2026)
-    * **Exchange Student**, UC Berkeley (Spring 2024)<br>
-  </div>
-</div>
+<section class="home-section" id="news" markdown="1">
 
-<!-- <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=4226ed&w=250&t=tt&d=RqR0-tM_DVHQvWiaE4Tf3z1GNHZmopCIm2IAW2lkG3k&co=fce593'></script> -->
+## News
+
+{% include home/news.md %}
+
+</section>
+
+<section class="home-section" id="projects" markdown="1">
+
+## Projects
+
+{% include home/projects.md %}
+
+</section>
+
+<section class="home-section" id="honors" markdown="1">
+
+## Honors
+
+{% include home/honors.md %}
+
+</section>

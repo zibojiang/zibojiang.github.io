@@ -2,6 +2,30 @@
 layout: null
 ---
 
+html {
+  scroll-behavior: smooth;
+}
+
+.home-section {
+  scroll-margin-top: 70px;
+}
+
+.home-section + .home-section {
+  margin-top: 3rem;
+}
+
+/* Replace the theme's older :target offset hack for homepage sections. */
+.home-section:target::before {
+  content: none;
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .home-info-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

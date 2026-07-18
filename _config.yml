@@ -10,11 +10,11 @@ language: "en"
 
 # --- List of links in the navigation bar --- #
 navbar-links:
-  About Me: "aboutme"
-  News: "news"
-  Projects: "projects"
-  Honors: "awards"
-  Blogs: "blogs"
+  About Me: "/#about"
+  News: "/#news"
+  Projects: "/#projects"
+  Honors: "/#honors"
+  Blogs: "/blogs/"
   
 # --- Logo --- #
 # Image to show in the navigation bar - works best with a square image.Remove this parameter if you don't want an image in the navbar
