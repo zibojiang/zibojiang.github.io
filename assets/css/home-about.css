@@ -116,7 +116,7 @@ html {
   border-bottom: 1px solid {{ site.navbar-border-col | default: "rgba(194, 113, 79, 0.2)" }} !important;
   box-shadow: 0 0.125rem 0.75rem rgb(0 0 0 / 8%);
   /* Let the solid background settle before the divider fades in. */
-  transition-delay: 0s, 0.35s, 0.35s;
+  transition-delay: 0s, 0.05s, 0.05s;
 }
 
 .navbar-custom.navbar-overlay.top-nav-short .navbar-brand,
