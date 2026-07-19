@@ -22,7 +22,7 @@ My research interests include **AI Hardware accelerators and architectures**, Di
   <div>
     <h3>Education</h3>
     <ul>
-      <li><strong>M.S. in Computer Engineering</strong>, UC San Diego (Expected Fall 2026)</li>
+      <li><strong>M.S. in Computer Engineering</strong>, UC San Diego</li>
       <li><strong>B.Eng. in Electronic Information</strong>, East China Normal University (Sep 2022 - Jul 2026)</li>
       <li><strong>Exchange Student</strong>, UC Berkeley (Spring 2024)</li>
     </ul>
