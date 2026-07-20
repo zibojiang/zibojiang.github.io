@@ -76,10 +76,10 @@ html {
   align-items: center;
   justify-content: center;
   width: 1.1em;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   text-align: center;
-  transform: translateY(3px);
+  transform: translateY(0px);
 }
 
 .theme-toggle:focus,
