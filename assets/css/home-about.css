@@ -72,8 +72,14 @@ html {
 }
 
 .theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 1.1em;
+  font-size: 18px;
+  line-height: 1;
   text-align: center;
+  transform: translateY(1px);
 }
 
 .theme-toggle:focus,
@@ -86,6 +92,18 @@ html {
 }
 
 @media (min-width: 1200px) {
+  .theme-toggle-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-custom .navbar-nav .theme-toggle {
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
   .theme-toggle-text {
     display: none;
   }
