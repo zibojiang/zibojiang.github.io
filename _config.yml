@@ -153,3 +153,5 @@ plugins:
   - jekyll-sitemap
 site-css:
   - "/assets/css/home-about.css"
+site-js:
+  - "/assets/js/theme-toggle.js"
