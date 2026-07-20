@@ -79,7 +79,7 @@ html {
   font-size: 18px;
   line-height: 1;
   text-align: center;
-  transform: translateY(1px);
+  transform: translateY(3px);
 }
 
 .theme-toggle:focus,
