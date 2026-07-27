@@ -14,8 +14,6 @@ tags:
 
 > 这篇文章记录的是我在正式上课前对两门课程的初步了解，以及现阶段的学习计划。很多认识还停留在预习阶段，等课程开始后，我会继续补充课堂内容、项目进展和自己的理解。
 
-## 中文
-
 这学期我计划在 UCSD 学习两门与数字芯片设计相关的课程：**ECE 260A — VLSI Digital Systems** 和 **ECE 284 — Low-Power VLSI Implementation for Machine Learning**。一门更偏向数字前端设计的基础与实现，另一门则进一步聚焦面向机器学习的低功耗硬件与 CNN NPU。两门课放在一起，正好形成了从基础数字电路到专用计算架构的一条学习路径。
 
 ### ECE 260A — VLSI Digital Systems
@@ -69,8 +67,6 @@ tags:
 希望学期结束时再回看这篇文章，能清楚地看到自己的认识是怎样从“提前了解”一步步变成实际设计经验的。
 
 ---
-
-## English
 
 This quarter, I plan to take two digital chip design courses at UCSD: **ECE 260A — VLSI Digital Systems** and **ECE 284 — Low-Power VLSI Implementation for Machine Learning**. The first course focuses more on the foundations and implementation of digital front-end design, while the second moves toward low-power machine-learning hardware and CNN NPUs. Together, they form a learning path from fundamental digital circuits to domain-specific accelerator architectures.
 
