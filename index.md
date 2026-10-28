@@ -17,7 +17,7 @@ cover-img:
     - "assets/img/Highlands of Scotland.JPG": "The Highlands of Scotland, United Kingdom (2025-01)"
     - "assets/img/Luss.jpeg": "Luss, United Kingdom (2025-01)"
     - "assets/img/sunsetberkeley.JPG": "California, United States (2024-03)"
-    - "assets/img/ECNU-Sunflowers.JPG": "Sunflowers, ECNU, China (2023-11)"
+    - "assets/img/ECNU-Sunflowers.DNG": "Sunflowers, ECNU, China (2023-05)"
 ---
 
 <section class="home-section" id="about" markdown="1">
