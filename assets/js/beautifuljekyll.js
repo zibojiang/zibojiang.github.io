@@ -4,6 +4,7 @@ var BeautifulJekyllJS = {
 
   bigImgEl : null,
   numImgs : null,
+  nextImgIndex : 1,
 
   init : function() {
     setTimeout(BeautifulJekyllJS.updateNavbarState, 10);
@@ -80,10 +81,11 @@ var BeautifulJekyllJS = {
   },
 
   initImgs : function() {
-    // If the page was large images to randomly select from, choose an image
+    // Show cover images in their configured order, starting with the first.
     if ($("#header-big-imgs").length > 0) {
       BeautifulJekyllJS.bigImgEl = $("#header-big-imgs");
       BeautifulJekyllJS.numImgs = BeautifulJekyllJS.bigImgEl.attr("data-num-img");
+      BeautifulJekyllJS.nextImgIndex = 1;
 
       // 2fc73a3a967e97599c9763d05e564189
       // set an initial image
@@ -103,7 +105,7 @@ var BeautifulJekyllJS = {
         // if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
 
         setTimeout(function(){
-          var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
+          var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + JSON.stringify(src) + ')');
           $(".intro-header.big-img").prepend(img);
           setTimeout(function(){ img.css("opacity", "1"); }, 50);
 
@@ -126,9 +128,10 @@ var BeautifulJekyllJS = {
   },
 
   getImgInfo : function() {
-    var randNum = Math.floor((Math.random() * BeautifulJekyllJS.numImgs) + 1);
-    var src = BeautifulJekyllJS.bigImgEl.attr("data-img-src-" + randNum);
-    var desc = BeautifulJekyllJS.bigImgEl.attr("data-img-desc-" + randNum);
+    var imgIndex = BeautifulJekyllJS.nextImgIndex;
+    var src = BeautifulJekyllJS.bigImgEl.attr("data-img-src-" + imgIndex);
+    var desc = BeautifulJekyllJS.bigImgEl.attr("data-img-desc-" + imgIndex);
+    BeautifulJekyllJS.nextImgIndex = (imgIndex % BeautifulJekyllJS.numImgs) + 1;
 
     return {
       src : src,
@@ -137,7 +140,7 @@ var BeautifulJekyllJS = {
   },
 
   setImg : function(src, desc) {
-    $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
+    $(".intro-header.big-img").css("background-image", 'url(' + JSON.stringify(src) + ')');
     if (typeof desc !== typeof undefined && desc !== false) {
       $(".img-desc").text(desc).show();
     } else {
