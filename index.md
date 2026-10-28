@@ -13,7 +13,7 @@ cover-img:
     - "assets/img/Siwa Oasis.JPG": "Siwa Oasis, Egypt (2026-02)" 
     - "assets/img/NTU.JPG": "NTU, Singapore (2025-07)"
     - "assets/img/ECNU-pink evening primrose.JPG": "Pink Evening Primrose, ECNU, China (2025-04)"
-    - "assets/img/Kyle.jpg": "Isle of Skye, United Kingdom (2025-01)"
+    - "assets/img/Kyle.png": "Isle of Skye, United Kingdom (2025-01)"
     - "assets/img/Highlands of Scotland.JPG": "The Highlands of Scotland, United Kingdom (2025-01)"
     - "assets/img/Luss.jpeg": "Luss, United Kingdom (2025-01)"
     - "assets/img/sunsetberkeley.JPG": "California, United States (2024-03)"
