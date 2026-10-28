@@ -147,6 +147,9 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  # Reference WordPress source is kept locally; it is not part of the Jekyll site.
+  - bibliophile-wpcom-1.0.4/
+  - .pages.yml
 
 plugins:
   - jekyll-paginate

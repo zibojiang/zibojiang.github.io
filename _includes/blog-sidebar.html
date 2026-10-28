@@ -1,0 +1,25 @@
+<aside class="journal-sidebar" aria-label="Blog navigation">
+  <a class="journal-brand" href="{{ '/blogs/' | relative_url }}">ZIBO NOTES</a>
+  <details class="journal-navigation" open>
+    <summary class="journal-menu-toggle">Menu</summary>
+    <nav class="journal-menu" aria-label="Blog">
+      <a class="journal-home-link" href="{{ '/' | relative_url }}">Home</a>
+      <a class="journal-index-link" href="{{ '/blogs/' | relative_url }}"{% if page.url == '/blogs/' %} aria-current="page"{% endif %}>Blogs</a>
+      {% if site.categories.size > 0 %}
+        {% assign navigation_groups = site.categories %}
+      {% else %}
+        {% assign navigation_groups = site.tags %}
+      {% endif %}
+      {% for group in navigation_groups %}
+      <details class="journal-archive">
+        <summary>{{ group[0] | escape }} <span>({{ group[1].size }})</span></summary>
+        <ul>
+          {% for entry in group[1] %}
+          <li><a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endfor %}
+    </nav>
+  </details>
+</aside>

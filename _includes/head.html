@@ -112,6 +112,12 @@
     {% endfor %}
   {% endif %}
 
+  {% if layout.layout-css %}
+    {% for css in layout.layout-css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
   {% if site.fb_app_id %}
   <meta property="fb:app_id" content="{{ site.fb_app_id }}">
   {% endif %}

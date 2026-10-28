@@ -1,0 +1,30 @@
+---
+common-css:
+  - "/assets/css/pygment_highlights.css"
+layout-css:
+  - "/assets/css/blog.css"
+common-js:
+  - "/assets/js/blog.js"
+---
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+{% include head.html %}
+<body class="journal-site">
+  {% include gtm_body.html %}
+  <a class="journal-skip-link" href="#journal-main">Skip to content</a>
+  <div class="journal-shell">
+    {% include blog-sidebar.html %}
+    <main id="journal-main" class="journal-main" tabindex="-1">
+      {{ content }}
+      <footer class="journal-footer">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author | escape }}</p>
+        <a href="{{ '/' | relative_url }}">Back to homepage</a>
+        <button id="theme-toggle" class="journal-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <span class="theme-toggle-text">Dark mode</span>
+        </button>
+      </footer>
+    </main>
+  </div>
+  {% include footer-scripts.html %}
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
-layout: home
+layout: blog-index
 title: Blogs
-subtitle: ""
-comments: true
+description: "Notes on learning, building, and life."
+share-description: "Course notes, projects, and personal reflections by Zibo Jiang."
 permalink: /blogs/
 ---

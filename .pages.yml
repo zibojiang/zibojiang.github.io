@@ -1,0 +1,91 @@
+# Pages CMS 2.x. Official configuration: https://pagescms.org/docs/configuration/
+# Only the blog collection and its upload folder are exposed in the editor.
+media:
+  - name: blog_images
+    label: 博客图片
+    input: assets/img/blog
+    output: /assets/img/blog
+    categories: [image]
+    extensions: [jpg, jpeg, png, gif, webp, avif]
+    rename: random
+
+content:
+  - name: posts
+    label: 博客文章
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      # {slug} is an alias for the primary field in Pages CMS, not this slug field.
+      template: "{fields.date}-{fields.slug}.md"
+      field: false
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields: [title, date, published, author]
+      sort: [date, title]
+      search: [title, subtitle, tags]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: subtitle
+        label: 副标题（可留空）
+        type: string
+      - name: date
+        label: 文章日期
+        type: date
+        required: true
+        description: 首次保存前确认日期；已发布文章改日期会改变网址。
+        options:
+          time: false
+          format: yyyy-MM-dd
+      - name: author
+        label: 作者
+        type: string
+        default: Zibo Jiang
+      - name: tags
+        label: 标签
+        type: string
+        list: true
+        description: 每项一个标签，例如 UCSD、VLSI 或旅行。
+      - name: slug
+        label: 网址短名（英文）
+        type: string
+        required: true
+        description: 新文例如 ucsd-course-notes。现有课程文章首次编辑请填 ucsd-course-preview-ece-260a-ece-284；其他旧文取原文件名去掉日期和 .md 后的部分。发布后不要修改。
+        pattern:
+          regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          message: 请使用小写英文字母、数字和单个短横线，例如 ucsd-course-notes。
+      - name: published
+        label: 发布到网站（关闭即保存为草稿）
+        type: boolean
+        # Jekyll publishes posts that omit this key. Match that behavior when
+        # editing old posts: a false default would silently unpublish them.
+        default: true
+        description: 新建文章默认开启发布；写草稿务必先关闭再保存。开启并保存后会提交到 GitHub，部署成功才会显示。公开仓库里的草稿源码仍可被看到。
+      - name: layout
+        type: string
+        hidden: true
+        default: post
+      - name: body
+        label: 正文
+        type: rich-text
+        description: 普通文章用 Editor；公式、Liquid 或复杂 Markdown 请先切 Source 编辑，并避免来回切换。编辑器预览不等于网站最终效果。
+        options:
+          format: markdown
+          switcher: true
+          media: blog_images
+          rename: random
+
+settings:
+  content:
+    # Preserve existing frontmatter keys that are not listed above.
+    # This does not guarantee byte-for-byte preservation of Markdown or YAML.
+    merge: true
