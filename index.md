@@ -8,15 +8,16 @@ share-description: "Zibo Jiang (江子博) is an incoming M.S. student at UC San
 share-img: "/assets/img/aboutme.JPG"
 comments: true
 cover-img:
-    - "assets/img/Jinan-Perl Spring.JPG": "Pearl Spring, Jinan, China (2026-02-18)"
+    - "assets/img/Jinan-Perl Spring.JPG": "Jinan, China (2026-02)"
     - "assets/img/Matrouh.jpeg": "Matrouh, Egypt (2026-02)" 
-    - "assets/img/NTU.JPG": "NTU, Singapore (2025-07-15)"
-    - "assets/img/ECNU-pink evening primrose.JPG": "Pink Evening Primrose, ECNU, Shanghai, China (2025-04-25)"
-    - "assets/img/Kyle.jpg": "Kyle, United Kingdom (2025-01-30)"
+    - "assets/img/Siwa Oasis.JPG": "Siwa Oasis, Egypt (2026-02)" 
+    - "assets/img/NTU.JPG": "NTU, Singapore (2025-07)"
+    - "assets/img/ECNU-pink evening primrose.JPG": "Pink Evening Primrose, ECNU, China (2025-04)"
+    - "assets/img/Kyle.jpg": "Isle of Skye, United Kingdom (2025-01)"
     - "assets/img/Highlands of Scotland.JPG": "The Highlands of Scotland, United Kingdom (2025-01)"
     - "assets/img/Luss.jpeg": "Luss, United Kingdom (2025-01)"
     - "assets/img/sunsetberkeley.JPG": "California, United States (2024-03)"
-    - "assets/img/ECNU-Sunflowers.JPG": "Sunflowers, ECNU, Shanghai, China (2023-11-17)"
+    - "assets/img/ECNU-Sunflowers.JPG": "Sunflowers, ECNU, China (2023-11)"
 ---
 
 <section class="home-section" id="about" markdown="1">
