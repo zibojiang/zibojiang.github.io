@@ -4,15 +4,7 @@ items:
     url: /
   - label: Blogs
     url: /blogs/
-  - label: UCSD
-    tag: UCSD
-  - label: VLSI
-    tag: VLSI
-  - label: Digital Design
-    tag: Digital Design
-  - label: NPU
-    tag: NPU
-  - label: Course Notes
-    tag: Course Notes
+  - label: UCSD (2026)
+    tag: UCSD (2026)
 show_counts: false
 auto_tags: true
