@@ -4,62 +4,17 @@
   <details class="journal-navigation" open>
     <summary class="journal-menu-toggle">Menu</summary>
     <nav class="journal-menu" aria-label="Blog">
-      {% if blog_navigation.items == nil %}
       <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/blogs/' | relative_url }}"{% if page.url == '/blogs/' %} aria-current="page"{% endif %}>Blogs</a>
-      {% endif %}
-      {% for item in blog_navigation.items %}
-        {% assign navigation_tag = item.tag | default: '' | strip %}
-        {% if navigation_tag != '' %}
-          {% assign navigation_posts = site.tags[navigation_tag] %}
-          {% if navigation_posts.size > 0 %}
       <details class="journal-archive">
-        <summary>{{ item.label | escape }}{% if blog_navigation.show_counts == true %} <span>({{ navigation_posts.size }})</span>{% endif %}</summary>
+        <summary>{{ blog_navigation.section_title | default: 'UCSD (2026)' | escape }}</summary>
         <ul>
-          {% for entry in navigation_posts %}
+          {% for entry in site.posts %}
           <li><a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a></li>
+          {% else %}
+          <li>暂无已发布文章</li>
           {% endfor %}
         </ul>
       </details>
-          {% endif %}
-        {% elsif item.children.size > 0 %}
-      <details class="journal-archive">
-        <summary>{{ item.label | escape }}</summary>
-        <ul>
-          {% for child in item.children %}
-            {% assign child_url = child.url | strip %}
-            {% assign child_url_start = child_url | slice: 0, 1 %}
-            {% if child_url_start == '/' %}{% assign child_url = child_url | relative_url %}{% endif %}
-          <li><a href="{{ child_url | escape }}"{% if page.url == child.url %} aria-current="page"{% endif %}>{{ child.label | escape }}</a></li>
-          {% endfor %}
-        </ul>
-      </details>
-        {% elsif item.url and item.url != '' %}
-          {% assign item_url = item.url | strip %}
-          {% assign item_url_start = item_url | slice: 0, 1 %}
-          {% if item_url_start == '/' %}{% assign item_url = item_url | relative_url %}{% endif %}
-      <a href="{{ item_url | escape }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label | escape }}</a>
-        {% endif %}
-      {% endfor %}
-      {% unless blog_navigation.auto_tags == false %}
-        {% for group in site.tags %}
-          {% assign tag_configured = false %}
-          {% for item in blog_navigation.items %}
-            {% assign navigation_tag = item.tag | default: '' | strip %}
-            {% if navigation_tag == group[0] %}{% assign tag_configured = true %}{% endif %}
-          {% endfor %}
-          {% unless tag_configured %}
-      <details class="journal-archive">
-        <summary>{{ group[0] | escape }}{% if blog_navigation.show_counts == true %} <span>({{ group[1].size }})</span>{% endif %}</summary>
-        <ul>
-          {% for entry in group[1] %}
-          <li><a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a></li>
-          {% endfor %}
-        </ul>
-      </details>
-          {% endunless %}
-        {% endfor %}
-      {% endunless %}
     </nav>
   </details>
 </aside>

@@ -1,10 +1,2 @@
 title: ZIBO NOTES
-items:
-  - label: Home
-    url: /
-  - label: Blogs
-    url: /blogs/
-  - label: UCSD (2026)
-    tag: UCSD (2026)
-show_counts: false
-auto_tags: true
+section_title: UCSD (2026)

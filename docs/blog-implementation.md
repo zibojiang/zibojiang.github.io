@@ -14,7 +14,7 @@
 
 ## 文件清单
 
-本轮字体位置与导航调整共 8 个变更文件：`.pages.yml`、`_data/blog-navigation.yml`、`_includes/blog-sidebar.html`、`_includes/head.html`、`_layouts/blog-index.html`、`assets/css/blog.css`，以及两份 `docs/blog-editor-guide.zh-CN.md`、`docs/blog-implementation.md`。上传时应包含全部六个功能文件；两份文档用于说明操作与验证。没有改动文章或非博客页面。
+当前导航简化涉及 `.pages.yml`、`_data/blog-navigation.yml`、`_includes/blog-sidebar.html`，以及两份 `docs/blog-editor-guide.zh-CN.md`、`docs/blog-implementation.md`。上传时应包含全部功能改动；若工作区还有此前尚未上传的字体或布局调整，也应一并保留。没有改动文章或非博客页面。
 
 下面包含本轮完善及上一轮保留的完整 Blog 集成文件；非 Blog 页面继续使用原来的布局和资源。
 
@@ -22,8 +22,8 @@
 - `_layouts/blog-index.html`：从 `site.posts` 生成标题、完整日期、摘要和文章链接，新文章自动加入列表。列表的大标题仅保留给屏幕阅读器，第一篇文章从版心顶部开始，与参考文章页位置一致。
 - `_layouts/post.html`：使用独立博客布局；显示原正文、日期、副标题、封面、标签与文章导航；保留评论和前后内容插槽。
 - `_layouts/blog-base.html`：博客专属文档骨架与双栏容器；复用现有 SEO head；主题切换移至页脚。
-- `_includes/blog-sidebar.html`：读取博客导航数据，支持普通链接、按标签自动列文章、手动子菜单和可选计数。自动标签会跳过已手动配置的标签。没有订阅表单或订阅按钮。
-- `_data/blog-navigation.yml`：可在 CMS 中修改的品牌、导航名称、顺序、链接和标签分组，初始包含 Home、Blogs 和现有五个标签。
+- `_includes/blog-sidebar.html`：固定显示返回 `/` 的 Home，以及一个可展开的文章分组；直接遍历 `site.posts` 收录全部已发布文章，不按标签或年份过滤。品牌链接指向 `/blogs/`，用于打开完整列表。没有订阅表单或订阅按钮。
+- `_data/blog-navigation.yml`：仅保留 `title` 和 `section_title` 两个显示名称，初始分别为 ZIBO NOTES 和 UCSD (2026)。不保存菜单列表、链接、标签映射、计数或自动追加开关。
 - `_includes/head.html`：条件加载 `layout.layout-css`，加上每次构建的时间戳版本号，使新页面重新请求博客 CSS。非博客布局没有声明此字段，因此不会加载博客样式。
 - `assets/css/blog.css`：仅匹配 `.journal-site`，定义本地字体、截图对应的尺寸、深色模式、手机布局和内容元素样式。
 - `assets/js/blog.js`：只处理博客移动菜单及窗口宽度变化，无后台、凭据或第三方服务调用。
@@ -33,7 +33,7 @@
 - `assets/fonts/albura/albura_italic_541.otf`：原主题半粗斜体，原样复制并用于 CSS 粗斜体。
 - `assets/fonts/albura/OFL.txt`：完整 SIL OFL 1.1 文本和字体版权声明。
 - `assets/fonts/albura/README.txt`：字体来源、各字重用途及许可核对说明。
-- `.pages.yml`：Pages CMS 文章集合、编辑字段、文件命名、发布开关、图片上传及合并保存设置；新增「博客导航」单文件表单，主菜单和子菜单支持拖动排序。
+- `.pages.yml`：Pages CMS 文章集合、编辑字段、文件命名、发布开关、图片上传及合并保存设置；「博客导航」单文件表单仅提供「左侧站名」和「博客分组名称」两个字符串输入。
 - `assets/img/blog/.gitkeep`：独立博客上传目录的占位文件，不改变已有图片资源。
 - `_config.yml`：仅新增构建排除项 `bibliophile-wpcom-1.0.4/`、`.pages.yml`，避免参考源码进入网站输出。没有改 permalink、主题、插件、主导航或全站颜色。
 - `docs/blog-editor-guide.zh-CN.md`：非技术用户的登录、授权、写作、图片、草稿、发布与排错指南。
@@ -57,7 +57,7 @@
 
 截图验收同时记录 CSS 视口和设备比例：约 1878 物理像素宽的用户截图对应约 1341 CSS px 视口和 1.4 倍设备比例。不能再把 1878 当作 CSS 视口宽度、以设备比例 1 验收。标题 32 CSS px 在该显示比例下约为 44.8 物理像素，正文 23.2 CSS px 约为 32.5 物理像素。没有复制参考作者的正文、照片、身份信息到网站。
 
-仍然存在的差异：中文和英文混排的长标题会换行，日期和正文随标题高度向下移动；中文由设备的 Noto Serif / 思源宋体 / 宋体回退，跨系统字形不会完全一致。左栏使用本站实际标签及 Home / Blogs；订阅区已按要求移除。列表是本站文章摘要，不能与参考站一篇长文章的内容长度逐像素一致。手机折叠菜单为适配实现，未经参考站手机截图核验。深色模式延续现有功能，参考截图只有浅色。
+仍然存在的差异：中文和英文混排的长标题会换行，日期和正文随标题高度向下移动；中文由设备的 Noto Serif / 思源宋体 / 宋体回退，跨系统字形不会完全一致。左栏是固定的 Home 和 UCSD (2026) 文章分组，点站名可到博客列表；订阅区已按要求移除。列表是本站文章摘要，不能与参考站一篇长文章的内容长度逐像素一致。手机折叠菜单为适配实现，未经参考站手机截图核验。深色模式延续现有功能，参考截图只有浅色。
 
 本轮下载的线上 `assets/css/blog.css` 与修改前本地文件 SHA-256 一致，已包含纠正后的 32px/23.2px 字号和 1100px 版心；用户截图仍呈现旧版大字号，无法从截图确定是浏览器缓存还是部署完成前的画面。已添加 CSS 版本参数。上传本轮全部变更、等待 Pages 部署成功后，首次可用 Ctrl+Shift+R 刷新；仅上传 CSS 不会启用导航后台或新的布局。
 
@@ -76,6 +76,7 @@
 - slug 限小写英文字母、数字和短横线；中文标题不会被直接用作文件名。
 - 图片保存到 `assets/img/blog`，正文 URL 为 `/assets/img/blog/...`，采用随机命名降低冲突。
 - `settings.content.merge: true` 保留表单之外的现有 frontmatter 字段；这不是正文 Markdown 的逐字节无损保证。
+- 导航数据仅有 `title` 与 `section_title`。Home 固定返回首页；文章分组自动读取 `site.posts`，修改分组名称只改变文字。文章 Tags 字段仍可选，但不参与导航生成；写新文章无需修改导航。
 
 Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，而不是只在列表里隐藏它。本配置没有自定义 JavaScript 隐藏草稿，也不使用 `--unpublished`。
 
@@ -94,7 +95,6 @@ Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，
 已完成：
 
 - 本轮 1848×1166 物理像素（1320×833 CSS px、DPR 1.4）桌面截图与参考 HTML 静态快照对齐；Blog 列表、英文文章、中文文章及三张手机预览共六项浏览器检查通过。字体加载成功、CSS 版本参数存在，无横向溢出或脚本错误。
-- 本轮新增六种导航配置场景、27 项断言：默认导航、自定义标签名称和顺序、标签去重、子菜单、自动追加开关、计数开关及缺配置回退；手机菜单和文章链接可用。CMS 本身的实际拖拽/保存仍需本人登录后验证。
 - YAML 解析及 CMS 配置与官方文档、字段初始化和保存源码核对。
 - `git diff --check` 和 `node --check assets/js/blog.js`。
 - 既有文章文件哈希不变，原 URL 与发布日期不变。
@@ -106,8 +106,10 @@ Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，
 
 未完成且不应误认为已通过：GitHub OAuth、App 安装、CMS 中真实保存和图片上传、复杂 Markdown 在在线编辑器中的往返保存、GitHub Pages 正式构建与部署。现有网站没有专用数学渲染器，只检查公式源文本保留，不声称完成数学排版。
 
+上述浏览器记录来自前面的布局工作。本轮固定两项导航另行完成 3 个小场景、22 项浏览器检查：Home 返回 `/`、站名打开 `/blogs/`、有标签和无标签的已发布文章都在同一分组、改分组名不影响文章链接、旧导航设置不会生成额外菜单、草稿被预览构建排除，以及手机菜单可用。桌面和手机展开截图均已检查，无横向溢出、缺资源或脚本异常；现有两篇文章内容及 URL 保持不变。这些仍是本地模板预览，不能代替正式 Jekyll 构建或 CMS 登录后的保存验证。
+
 ## 用户需要完成的一次性步骤
 
-你已完成 Pages CMS 登录与仓库授权，无需重复授权。将本轮改动完整上传到当前 GitHub Pages 的实际发布分支（可用 GitHub Desktop 图形界面，不必运行 Git 命令），包含 `.pages.yml` 和新增的 `_data/blog-navigation.yml`，等待构建完成。重新打开 [Pages CMS](https://app.pagescms.org/) 中的该仓库和分支，即可看到「博客导航」。若网站仍显示旧样式，用 Ctrl+Shift+R 刷新。保存一次导航修改，检查部署后的菜单即可验证新功能。
+你已完成 Pages CMS 登录与仓库授权，无需重复授权。将本轮改动完整上传到当前 GitHub Pages 的实际发布分支（可用 GitHub Desktop 图形界面，不必运行 Git 命令），包含 `.pages.yml`、`_data/blog-navigation.yml` 和侧栏模板，等待构建完成。重新打开 [Pages CMS](https://app.pagescms.org/) 中的该仓库和分支，「博客导航」应只显示两个名称输入框。若网站仍显示旧样式，用 Ctrl+Shift+R 刷新。
 
-完成连接后的日常写作无需手动创建 Markdown、填写 YAML 或执行 Git 命令。详细操作见 [中文写作指南](blog-editor-guide.zh-CN.md)。
+日常只需在「博客文章」写作并发布，新文会自动进入 UCSD (2026) 分组，无需再操作导航。想改分组名时，只修改「博客导航」中的「博客分组名称」；想看完整列表，点网页左上方的 ZIBO NOTES。详细操作见 [中文写作指南](blog-editor-guide.zh-CN.md)。

@@ -51,10 +51,10 @@ content:
         type: string
         default: Zibo Jiang
       - name: tags
-        label: 标签
+        label: 标签（可留空）
         type: string
         list: true
-        description: 每项一个标签，例如 UCSD、VLSI 或旅行。
+        description: 用于标记文章主题，例如 VLSI 或旅行；不用填写也会自动出现在左侧博客分组中。
       - name: slug
         label: 网址短名（英文）
         type: string
@@ -95,58 +95,17 @@ content:
       delete: false
     fields:
       - name: title
-        label: 左侧标题
+        label: 左侧站名
         type: string
         required: true
         default: ZIBO NOTES
-      - name: items
-        label: 菜单项目
-        type: object
-        description: 拖动左侧手柄可调整顺序。每项填写显示名称，再从链接、文章标签、子菜单中选择一种填写，其余留空。
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{fields.label}"
-        fields:
-          - name: label
-            label: 显示名称
-            type: string
-            required: true
-          - name: url
-            label: 链接地址
-            type: string
-            description: 普通链接填写，例如 /blogs/ 或 https://example.com/；文章标签和子菜单保持为空。
-          - name: tag
-            label: 文章标签
-            type: string
-            description: 填写与文章完全一致的标签（包括大小写和空格），例如 UCSD；会自动列出该标签下的文章。链接地址和子菜单保持为空。
-          - name: children
-            label: 子菜单
-            type: object
-            description: 用于手动组织多个链接；父项目的链接地址和文章标签保持为空。子项目也可以拖动排序。
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{fields.label}"
-            fields:
-              - name: label
-                label: 显示名称
-                type: string
-                required: true
-              - name: url
-                label: 链接地址
-                type: string
-                required: true
-                description: 填写以 / 开头的站内路径，或完整的 https:// 链接。
-      - name: show_counts
-        label: 显示标签下的文章数量
-        type: boolean
-        default: false
-      - name: auto_tags
-        label: 自动追加其他文章标签
-        type: boolean
-        default: true
-        description: 开启后，将没有手动配置的文章标签追加到菜单末尾；关闭后，只显示上面配置的菜单。
+        description: 显示在左上角；点击站名可返回博客列表。Home 固定返回个人主页，不需要设置。
+      - name: section_title
+        label: 博客分组名称
+        type: string
+        required: true
+        default: UCSD (2026)
+        description: 所有已发布博客都会自动列在这个分组里。想改名称时只改这里；平时写文章不需要修改导航。
 
 settings:
   content:
