@@ -5,7 +5,7 @@ subtitle: 从数字前端到 CNN NPU
 date: 2026-07-27
 author: Zibo Jiang
 tags:
-  - UCSD
+  - UCSD (2026)
 slug: ucsd-course-preview-ece-260a-ece-284
 published: true
 ---
