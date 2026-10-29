@@ -7,4 +7,4 @@ items:
   - label: UCSD (2026)
     tag: UCSD (2026)
 show_counts: false
-auto_tags: true
+auto_tags: false
