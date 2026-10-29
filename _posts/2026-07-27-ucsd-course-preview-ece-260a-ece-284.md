@@ -1,17 +1,14 @@
 ---
 layout: post
-title: "UCSD 选课与课程预习记录：ECE 260A 与 ECE 284"
-subtitle: "从数字前端到 CNN NPU"
+title: UCSD 选课与课程预习记录：ECE 260A 与 ECE 284
+subtitle: 从数字前端到 CNN NPU
 date: 2026-07-27
 author: Zibo Jiang
 tags:
-  - UCSD
-  - VLSI
-  - Digital Design
-  - NPU
-  - Course Notes
+  - UCSD (2026)
+slug: ucsd-course-preview-ece-260a-ece-284
+published: true
 ---
-
 > 这篇文章记录的是我在正式上课前对两门课程的初步了解，以及现阶段的学习计划。很多认识还停留在预习阶段，等课程开始后，我会继续补充课堂内容、项目进展和自己的理解。
 
 这学期我计划在 UCSD 学习两门与数字芯片设计相关的课程：**ECE 260A — VLSI Digital Systems** 和 **ECE 284 — Low-Power VLSI Implementation for Machine Learning**。一门更偏向数字前端设计的基础与实现，另一门则进一步聚焦面向机器学习的低功耗硬件与 CNN NPU。两门课放在一起，正好形成了从基础数字电路到专用计算架构的一条学习路径。
