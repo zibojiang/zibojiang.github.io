@@ -1,3 +1,7 @@
 title: ZIBO NOTES
+homepage_label: Homepage
+group_order:
+  - a2c37f84-95fb-4d3c-8f1b-0f8d8a662026
+  - f4e7a9df-40b3-47b0-942e-bc27839f01ce
 # Legacy posts without blog_group belong to the original group.
 default_group: a2c37f84-95fb-4d3c-8f1b-0f8d8a662026

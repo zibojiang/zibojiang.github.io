@@ -1,5 +1,5 @@
 # Pages CMS 2.x. Official configuration: https://pagescms.org/docs/configuration/
-# Blog posts, groups, the sidebar name, and the upload folder are editable here.
+# Blog posts, groups, navigation, and the upload folder are editable here.
 media:
   - name: blog_images
     label: 博客图片
@@ -42,14 +42,14 @@ content:
         label: 博客分组
         type: reference
         required: true
-        default: a2c37f84-95fb-4d3c-8f1b-0f8d8a662026
-        description: 选择这篇文章放在哪个分组。需要新分组时，先到「博客分组」添加并保存，再回来选择。
+        description: 选择文章所属分组，也可以输入名称搜索。若只显示当前分组，清空框内文字后重新选择。新分组先在「博客分组」保存。
         options:
           collection: blog_groups
           multiple: false
           search: title
           value: "{fields.id}"
           label: "{primary}"
+          placeholder: 请选择博客分组
       - name: date
         label: 文章日期
         type: date
@@ -144,7 +144,24 @@ content:
         type: string
         required: true
         default: ZIBO NOTES
-        description: 显示在左上角；点击站名可返回博客列表。Home 固定返回个人主页，不需要设置。
+        description: 最上方的站名链接，点击后打开按日期排列的博客目录。
+      - name: homepage_label
+        label: 返回个人主页的按钮名称
+        type: string
+        required: true
+        default: Homepage
+        description: 显示在站名下面，始终链接到你的个人主页。
+      - name: group_order
+        label: 分组顺序（拖动调整）
+        type: reference
+        list: true
+        options:
+          collection: blog_groups
+          multiple: false
+          search: title
+          value: "{fields.id}"
+          label: "{primary}"
+          placeholder: 选择一个分组
 
 settings:
   content:

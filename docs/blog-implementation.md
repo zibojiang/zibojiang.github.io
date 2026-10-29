@@ -14,17 +14,17 @@
 
 ## 文件清单
 
-当前分组功能涉及 `.pages.yml`、`_data/blog-navigation.yml`、`_data/blog_groups/`、`_includes/blog-sidebar.html`，以及两份 `docs/blog-editor-guide.zh-CN.md`、`docs/blog-implementation.md`。上传时应包含全部功能改动；若工作区还有此前尚未上传的字体或布局调整，也应一并保留。没有改动文章或非博客页面。
+当前目录与导航功能涉及 `.pages.yml`、`_data/blog-navigation.yml`、`_data/blog_groups/`、`_includes/blog-sidebar.html`、`_layouts/blog-index.html`、`assets/css/blog.css`，以及两份 `docs/blog-editor-guide.zh-CN.md`、`docs/blog-implementation.md`。上传时应包含全部功能改动；若工作区还有此前尚未上传的字体或布局调整，也应一并保留。没有改动文章或非博客页面。
 
 下面包含本轮完善及上一轮保留的完整 Blog 集成文件；非 Blog 页面继续使用原来的布局和资源。
 
 - `blogs.md`：保留 `/blogs/` permalink，使用独立 `blog-index` 布局。
-- `_layouts/blog-index.html`：从 `site.posts` 生成标题、完整日期、摘要和文章链接，新文章自动加入列表。列表的大标题仅保留给屏幕阅读器，第一篇文章从版心顶部开始，与参考文章页位置一致。
+- `_layouts/blog-index.html`：从 `site.posts` 生成按日期排列的文章目录，每行显示 `MM.DD.YY – 标题`；标题为正体、带下划线的链接，不再输出摘要卡片。新文章自动加入目录，品牌链接进入此页。现有两篇文章无需分页，不添加无效页码。
 - `_layouts/post.html`：使用独立博客布局；显示原正文、日期、副标题、封面、标签与文章导航；保留评论和前后内容插槽。
 - `_layouts/blog-base.html`：博客专属文档骨架与双栏容器；复用现有 SEO head；主题切换移至页脚。
-- `_includes/blog-sidebar.html`：固定显示返回 `/` 的 Home，按分组名称排列可展开的文章组；根据文章的 `blog_group` ID 收录 `site.posts` 中的已发布文章，不按标签或年份推断。缺少分组字段的旧文归入初始组，悬空引用进入「未分组」。品牌链接指向 `/blogs/`，用于打开完整列表。没有订阅表单或订阅按钮。
-- `_data/blog-navigation.yml`：保存左侧站名 `title`，初始为 ZIBO NOTES；`default_group` 保存旧文回退用的初始分组 ID，不在 CMS 表单中显示。不保存菜单列表、链接、标签映射、计数或自动追加开关。
-- `_data/blog_groups/`：每个分组一个 YAML 文件，保存稳定的 `id` 和可编辑的 `title`，文件名由 ID 生成。目前只预置 UCSD (2026)，ID 为 `a2c37f84-95fb-4d3c-8f1b-0f8d8a662026`；其他分组由用户在 CMS 创建。
+- `_includes/blog-sidebar.html`：显示返回 `/` 的 Homepage，按钮文字可修改；按配置顺序排列可展开的文章组，自动在后面补上未配置顺序的新组。重复 ID 仅显示一次，无效 ID 忽略。根据文章的 `blog_group` ID 收录 `site.posts` 中的已发布文章，不按标签或年份推断。缺少分组字段的旧文归入初始组，悬空引用进入「未分组」。品牌链接指向 `/blogs/` 目录。没有订阅表单或订阅按钮。
+- `_data/blog-navigation.yml`：保存站名 `title`、首页按钮文字 `homepage_label` 和分组 ID 顺序 `group_order`；当前顺序为 UCSD (2026) → I, Zibo。`default_group` 保存旧文回退用的初始分组 ID，不在 CMS 表单中显示。不开放 URL、标签映射、计数或自动追加开关。
+- `_data/blog_groups/`：每个分组一个 YAML 文件，保存稳定的 `id` 和可编辑的 `title`，文件名由 ID 生成。初始 UCSD (2026) 的 ID 为 `a2c37f84-95fb-4d3c-8f1b-0f8d8a662026`；本地另同步了用户已在远端 CMS 创建的 I, Zibo，ID 为 `f4e7a9df-40b3-47b0-942e-bc27839f01ce`。后者来自实际远端文件，不是重新生成的重复分组。
 - `_includes/head.html`：条件加载 `layout.layout-css`，加上每次构建的时间戳版本号，使新页面重新请求博客 CSS。非博客布局没有声明此字段，因此不会加载博客样式。
 - `assets/css/blog.css`：仅匹配 `.journal-site`，定义本地字体、截图对应的尺寸、深色模式、手机布局和内容元素样式。
 - `assets/js/blog.js`：只处理博客移动菜单及窗口宽度变化，无后台、凭据或第三方服务调用。
@@ -34,7 +34,7 @@
 - `assets/fonts/albura/albura_italic_541.otf`：原主题半粗斜体，原样复制并用于 CSS 粗斜体。
 - `assets/fonts/albura/OFL.txt`：完整 SIL OFL 1.1 文本和字体版权声明。
 - `assets/fonts/albura/README.txt`：字体来源、各字重用途及许可核对说明。
-- `.pages.yml`：Pages CMS 文章和博客分组集合、编辑字段、文件命名、发布开关、图片上传及合并保存设置；文章通过动态单选框选择分组；「博客导航」单文件表单仅提供「左侧站名」输入。
+- `.pages.yml`：Pages CMS 文章和博客分组集合、编辑字段、文件命名、发布开关、图片上传及合并保存设置；文章通过无默认预选的必填动态单选框选择分组；「博客导航」提供站名、首页按钮名称和可拖动的分组顺序列表。
 - `assets/img/blog/.gitkeep`：独立博客上传目录的占位文件，不改变已有图片资源。
 - `_config.yml`：仅新增构建排除项 `bibliophile-wpcom-1.0.4/`、`.pages.yml`，避免参考源码进入网站输出。没有改 permalink、主题、插件、主导航或全站颜色。
 - `docs/blog-editor-guide.zh-CN.md`：非技术用户的登录、授权、写作、图片、草稿、发布与排错指南。
@@ -51,14 +51,14 @@
 
 - 外层版心最大 1100 CSS px，窄桌面左右各保留 20 CSS px。
 - 双栏比例 1:2，列间距 80 CSS px；正文内层最大宽度 620 CSS px，居于右列中央。
-- 顶部容器留白 136 CSS px；文章和列表标题 32 CSS px、正常字重、真实斜体；正文、摘要和日期均为 23.2 CSS px / 1.4。
+- 顶部容器留白 136 CSS px；文章详情标题 32 CSS px、正常字重、真实斜体；正文和详情日期均为 23.2 CSS px / 1.4。目录页改用截图对应的日期与正体下划线标题行，不沿用原摘要标题样式。
 - 品牌 16 CSS px；左栏导航 14.4 CSS px、行高 1.6、项目间距 20 CSS px。
-- 参考页实际内联样式进一步确认：品牌行高 18px、品牌顶部相对正文标题下移 10.72px；导航字距 .04em。单行标题顶端 136px，日期顶端 245px，正文顶端 301.484px；列表首篇和详情页采用同样的起始坐标。标题后的空白 73px、日期后的空白和普通段落间距均为 24px。
+- 参考页实际内联样式进一步确认：品牌行高 18px、品牌顶部相对正文标题下移 10.72px；导航字距 .04em。文章详情单行标题顶端 136px，日期顶端 245px，正文顶端 301.484px；标题后的空白 73px、日期后的空白和普通段落间距均为 24px。目录页不使用这一套大标题与日期间距。
 - 900px 及以下改为单栏，菜单可折叠；正文减至 22px，480px 及以下为 20px。
 
 截图验收同时记录 CSS 视口和设备比例：约 1878 物理像素宽的用户截图对应约 1341 CSS px 视口和 1.4 倍设备比例。不能再把 1878 当作 CSS 视口宽度、以设备比例 1 验收。标题 32 CSS px 在该显示比例下约为 44.8 物理像素，正文 23.2 CSS px 约为 32.5 物理像素。没有复制参考作者的正文、照片、身份信息到网站。
 
-仍然存在的差异：中文和英文混排的长标题会换行，日期和正文随标题高度向下移动；中文由设备的 Noto Serif / 思源宋体 / 宋体回退，跨系统字形不会完全一致。左栏包含固定 Home 和本站的文章分组，点站名可到博客列表；订阅区已按要求移除。列表是本站文章摘要，不能与参考站一篇长文章的内容长度逐像素一致。手机折叠菜单为适配实现，未经参考站手机截图核验。深色模式延续现有功能，参考截图只有浅色。
+仍然存在的差异：中文和英文混排的长标题会换行，详情页日期和正文随标题高度向下移动；中文由设备的 Noto Serif / 思源宋体 / 宋体回退，跨系统字形不会完全一致。左栏包含 Homepage 和本站的文章分组，点站名可到博客目录；订阅区已按要求移除。目录使用本站实际文章及日期，现有两篇文章不生成示例分页。手机折叠菜单为适配实现，未经参考站手机截图核验。深色模式延续现有功能，参考截图只有浅色。
 
 本轮下载的线上 `assets/css/blog.css` 与修改前本地文件 SHA-256 一致，已包含纠正后的 32px/23.2px 字号和 1100px 版心；用户截图仍呈现旧版大字号，无法从截图确定是浏览器缓存还是部署完成前的画面。已添加 CSS 版本参数。上传本轮全部变更、等待 Pages 部署成功后，首次可用 Ctrl+Shift+R 刷新；仅上传 CSS 不会启用导航后台或新的布局。
 
@@ -77,23 +77,38 @@
 - slug 限小写英文字母、数字和短横线；中文标题不会被直接用作文件名。
 - 图片保存到 `assets/img/blog`，正文 URL 为 `/assets/img/blog/...`，采用随机命名降低冲突。
 - `settings.content.merge: true` 保留表单之外的现有 frontmatter 字段；这不是正文 Markdown 的逐字节无损保证。
-- 导航表单只显示站名 `title`，文件中另保留旧文回退用的 `default_group`。Home 固定返回首页；分组由独立集合管理，写新文章只需选择所属分组，无需修改导航。文章 Tags 字段仍可选，不参与分组。
+- 导航表单显示站名 `title`、首页按钮文字 `homepage_label` 和分组顺序 `group_order`；文件中另保留旧文回退用的 `default_group`。Homepage 链接固定返回 `/`；分组由独立集合管理，写新文章只需选择所属分组，无需修改导航。文章 Tags 字段仍可选，不参与分组。
 
 ### 分组数据与稳定引用
 
 「博客分组」集合指向 `_data/blog_groups`，使用 `format: yaml`。每条记录包含隐藏的 `type: uuid` 字段 `id`，以及唯一可见的必填名称字段 `title`。UUID 不设固定默认值，由 CMS 新建时生成；文件名使用 `{fields.id}.yml` 并隐藏手工文件名输入。初始 2026 分组沿用原侧栏的分组名称，未创建 2027 示例记录。
 
-文章的 `blog_group` 是必填 reference 字段，配置 `collection: blog_groups`、`multiple: false`、`search: title`、`value: "{fields.id}"`、`label: "{primary}"`。保存值是单个 ID 字符串，不是数组，也不是显示名称。默认值为初始分组 ID `a2c37f84-95fb-4d3c-8f1b-0f8d8a662026`；旧文件不会被批量重写，缺字段时由侧栏模板回退到这个 ID，首次经 CMS 保存时才会补入默认值。
+文章的 `blog_group` 是必填 reference 字段，配置 `collection: blog_groups`、`multiple: false`、`search: title`、`value: "{fields.id}"`、`label: "{primary}"`。保存值是单个 ID 字符串，不是数组，也不是显示名称。本轮取消 CMS 默认预选：新文章必须选择分组，缺字段的旧文章首次经 CMS 编辑保存时也必须选择一次。网站侧栏仍将缺字段旧文回退到初始 ID `a2c37f84-95fb-4d3c-8f1b-0f8d8a662026`；没有批量改写 `_posts`。
 
-分组名称可以修改，ID、文件路径和既有文章引用保持不变。分组按名称排列；在 CMS 保存新组后，再进入文章编辑页选择，已打开的文章表单可能需要刷新。分组允许删除；删除前应先调整文章归属。reference 的必填验证不保证目标仍存在，因此侧栏将引用不存在 ID 的文章集中显示在「未分组」，不会丢失阅读入口。若初始组已删除，缺分组字段的旧文也进入「未分组」。
+分组名称可以修改，ID、文件路径和既有文章引用保持不变。在 CMS 保存新组后，再进入文章编辑页选择，已打开的文章表单可能需要刷新。分组允许删除；删除前应先调整文章归属。reference 的必填验证不保证目标仍存在，因此侧栏将引用不存在 ID 的文章集中显示在「未分组」，不会丢失阅读入口。若初始组已删除，缺分组字段的旧文也进入「未分组」。
+
+导航 `group_order` 使用 `type: reference` 加 `list: true`，每个列表项 `multiple: false`，保存平面的 ID 数组。CMS 列表可拖动排序；新组先保存，再在顺序列表 **Add an item** 选择并拖动。前台依顺序显示有效且不重复的 ID，剩余分组按名称排列追加。因此从顺序列表删除一项不会隐藏该组；无效 ID 不生成空菜单。此顺序仅影响侧栏，不改变文章日期、所属分组或目录链接。
+
+已沿官方源码核对列表中的引用：表单将每行绑定为 `group_order.0` 等路径，并把该行的值和完整字段配置传给 reference。引用组件只按 `options.collection` 请求 `/references/blog_groups`，不会把数字索引路径传入 API；API 中的字段查找只针对目标分组记录的 `id`、`title`。所以该配置不依赖 `getFieldByPath` 对数字索引的支持。这里只完成源码核对，未在已登录 CMS 中实际拖动保存。
 
 核对 Pages CMS 2.1.8 官方提交 `6f4e860a35d934406580287e7042e5e111e207a1`：
 
 - [reference 官方文档](https://pagescms.org/docs/configuration/fields/reference/)与[单选保存源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/reference/edit-component.tsx)：单选保存标量；显式设置 `search: title`，避免默认按文件名搜索 UUID。
 - [引用数据接口](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/app/api/%5Bowner%5D/%5Brepo%5D/%5Bbranch%5D/references/%5Bname%5D/route.ts)：支持 YAML 集合，并用配置模板解析引用值和显示名称。
-- [UUID 官方文档](https://pagescms.org/docs/configuration/fields/uuid/)、[UUID 初始化源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/uuid/index.tsx)、[字段默认值源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/lib/schema.ts)：隐藏 UUID 仍参与新建默认值；缺失的 reference 字段可用 ID 字符串默认值。
+- [UUID 官方文档](https://pagescms.org/docs/configuration/fields/uuid/)、[UUID 初始化源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/uuid/index.tsx)、[字段默认值源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/lib/schema.ts)：隐藏 UUID 仍参与新建默认值；`generate: false` 仅隐藏重新生成按钮，不阻止首次自动生成。
 - [文件名文档](https://pagescms.org/docs/configuration/content/filename/)与[保存源码](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/components/entry/entry.tsx)：新建按模板生成路径，编辑沿用既有路径，因此修改名称不改变引用。
 - [Jekyll 数据子目录](https://jekyllrb.com/docs/datafiles/#subfolders)：`site.data.blog_groups` 是文件名到记录的映射，侧栏需从映射取记录后排序，不能直接当作记录数组。
+- [列表字段文档](https://pagescms.org/docs/configuration/content/fields/)与[表单列表实现](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/components/entry/entry-form.tsx)：`list: true` 提供列表条目和拖动顺序；每个引用仍保存单个 ID。
+
+### 引用下拉框仅显示原组的问题
+
+只读检查远端确认：用户创建的 `I, Zibo` 已保存，文件名与正文 UUID 一致，和 2026 组各有独立 ID，YAML 均有效。问题不能归因于漏保存、UUID 缺失或复用。
+
+Pages CMS 2.1.8 锁定 Base UI 1.3.0。单选引用先显示未解析的 UUID，异步取得名称后，Base UI 会以 `reason: none` 同步输入文字；Pages CMS 将每次 `onInputValueChange` 都写入 `searchTerm`，随后引用 API 按这个词过滤。因此默认选择 2026 时，查询会变成 `UCSD (2026)`，过滤掉 `I, Zibo`。这是可独立于缓存复现的输入过滤问题，不需要用缓存异常解释。[引用控件](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/reference/edit-component.tsx#L246)、[Base UI 同步逻辑](https://github.com/mui/base-ui/blob/v1.3.0/packages/react/src/combobox/root/AriaCombobox.tsx#L902)、[引用 API 过滤](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/app/api/%5Bowner%5D/%5Brepo%5D/%5Bbranch%5D/references/%5Bname%5D/route.ts#L116)
+
+本轮取消文章字段的 `default`，新建页面以空查询开始。已有文章和导航顺序条目仍可能有选中值；更换分组时可点击框内文字，Ctrl+A 删除，再选择或输入新名称搜索。这里没有另一个独立搜索框。配置层不能修改托管 CMS 的组件事件处理，不能声称彻底修复了官方组件。`options.placeholder` 由当前源码读取，但 reference 文档的 Options 表暂未列出；它只增加提示，不负责修复过滤。
+
+在站点外 QA 目录 `reference-filter-bug/` 中，抽取官方选中值归一化、输入同步和引用过滤代码，仅去掉 TypeScript 类型后执行，12 项断言通过：预选名称查询只返回旧组、无默认值空查询返回两组、清空查询返回两组、输入新组名能命中新组。实验没有 OAuth、CMS API 请求或远程写入，也未挂载真实 React 控件。用户尚未反馈实际界面清空文字后的结果，因此不声称已完成登录 CMS 验证或确认托管实例的具体部署版本。
 
 Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，而不是只在列表里隐藏它。本配置没有自定义 JavaScript 隐藏草稿，也不使用 `--unpublished`。
 
@@ -109,9 +124,9 @@ Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，
 
 替代检查使用真实布局和 includes，经 LiquidJS 与 marked 生成站点外的临时预览；Chrome / Playwright 实际加载 HTML、CSS、脚本、图片和本地字体。该预览不等同于 Ruby Liquid、kramdown 和 Jekyll 插件链。
 
-已完成：
+此前布局与分组工作已完成：
 
-- 本轮 1848×1166 物理像素（1320×833 CSS px、DPR 1.4）桌面截图与参考 HTML 静态快照对齐；Blog 列表、英文文章、中文文章及三张手机预览共六项浏览器检查通过。字体加载成功、CSS 版本参数存在，无横向溢出或脚本错误。
+- 此前 1848×1166 物理像素（1320×833 CSS px、DPR 1.4）桌面截图与参考 HTML 静态快照对齐；当时的 Blog 列表、英文文章、中文文章及三张手机预览共六项浏览器检查通过。字体加载成功、CSS 版本参数存在，无横向溢出或脚本错误。
 - YAML 解析及 CMS 配置与官方文档、字段初始化和保存源码核对。
 - `git diff --check` 和 `node --check assets/js/blog.js`。
 - 既有文章文件哈希不变，原 URL 与发布日期不变。
@@ -121,12 +136,14 @@ Jekyll 原生处理 `published: false`，普通生产构建会排除该文章，
 - 在站点外独立测试副本中，新增无 layout 文章自动继承 `post`；按 Jekyll 规则模拟的 published:false、_drafts、未来文章未进入列表/标签/RSS，也没有详情页输出。这是预览规则回归，正式 Jekyll 行为仍需构建确认。
 - 测试副本中的多级标题、粗斜体、图片、图注、链接、列表、引用、表格、长代码在桌面及手机预览正常，无页面横向溢出。
 
-未完成且不应误认为已通过：GitHub OAuth、App 安装、CMS 中真实保存和图片上传、复杂 Markdown 在在线编辑器中的往返保存、GitHub Pages 正式构建与部署。现有网站没有专用数学渲染器，只检查公式源文本保留，不声称完成数学排版。
+本次未代为执行或验证：GitHub OAuth、App 安装、CMS 中真实保存和图片上传、复杂 Markdown 在在线编辑器中的往返保存、GitHub Pages 正式构建与部署。用户已经自行完成登录授权，不需要重复授权；这些操作不属于本次本地自动验证结果。现有网站没有专用数学渲染器，只检查公式源文本保留，不声称完成数学排版。
 
-上述浏览器记录来自前面的布局工作。本轮多分组另行完成 4 个场景、27 项检查：正确加载嵌套数据目录、旧文默认归入 2026、新增 2027 后文章按 ID 分组、改组名保持归属、空组提示、删除组后的「未分组」入口，以及草稿排除和手机菜单。11 个保护文件哈希、5 个非 Blog 页面、4 个共享样式和两篇旧文章 URL 保持不变。桌面和手机截图展示实际仓库的 2026 分组；2027 等测试数据仅存在于站点外的 QA 副本。配置和官方源码核对不等于已登录 CMS 的真实创建、保存和下拉刷新测试，本地模板预览也不能代替正式 Jekyll 构建。
+此前多分组功能另行完成 4 个场景、27 项检查：正确加载嵌套数据目录、旧文默认归入 2026、新增 2027 后文章按 ID 分组、改组名保持归属、空组提示、删除组后的「未分组」入口，以及草稿排除和手机菜单。11 个保护文件哈希、5 个非 Blog 页面、4 个共享样式和两篇旧文章 URL 保持不变。该批桌面和手机截图只展示当时仓库的 2026 分组；2027 等测试数据仅存在于站点外的 QA 副本。这批结果不能单独证明本轮导航排序与新目录已通过；本轮结果另行记录。配置和官方源码核对不等于已登录 CMS 的真实创建、保存和下拉刷新测试，本地模板预览也不能代替正式 Jekyll 构建。
+
+本轮目录与导航另行完成 2 个场景、3 个视图、24 项检查：实际 UCSD (2026) → I, Zibo 顺序、Homepage/站名链接、日期标题目录、下划线样式、手机菜单，以及测试副本中的排序去重、失效排序 ID 忽略、新组自动追加和文章归组。桌面目录实测为 Albura 32px/36px，390px 手机为 27px/30.375px，条目间距均为 24px。11 个保护源文件、5 个非 Blog 页面、4 个共享 CSS 和两篇原文章 URL 均未变化。验证仍使用 LiquidJS/marked，不等同于正式 Jekyll 构建或登录后的 CMS 页面验收。
 
 ## 用户需要完成的一次性步骤
 
-你已完成 Pages CMS 登录与仓库授权，无需重复授权。将本轮改动完整上传到当前 GitHub Pages 的实际发布分支（可用 GitHub Desktop 图形界面，不必运行 Git 命令），包含 `.pages.yml`、`_data/blog-navigation.yml`、`_data/blog_groups/` 和侧栏模板，等待构建完成。重新打开 [Pages CMS](https://app.pagescms.org/) 中的该仓库和分支，应看到「博客分组」，文章中应有分组下拉框；「博客导航」只显示站名输入框。若网站仍显示旧样式，用 Ctrl+Shift+R 刷新。
+你已完成 Pages CMS 登录与仓库授权，无需重复授权。将本轮改动完整上传到当前 GitHub Pages 的实际发布分支（可用 GitHub Desktop 图形界面，不必运行 Git 命令），包含 `.pages.yml`、导航与分组数据、侧栏模板、目录布局及博客 CSS，等待构建完成。重新打开 [Pages CMS](https://app.pagescms.org/) 中的该仓库和分支，文章分组应不再默认预选；「博客导航」应显示站名、首页按钮名称和分组顺序。远端已存在 I, Zibo，不要重复新建。若网站仍显示旧样式，用 Ctrl+Shift+R 刷新。
 
-需要 UCSD (2027) 时，在「博客分组」新建，只填名称并保存；再到「博客文章」写作，选择这个分组。日常发布后文章自动进入所选分组，无需再操作导航。想改组名，在「博客分组」修改名称；想看完整列表，点网页左上方的 ZIBO NOTES。详细操作见 [中文写作指南](blog-editor-guide.zh-CN.md)。
+需要 UCSD (2027) 时，在「博客分组」新建，只填名称并保存；再到「博客文章」写作，选择这个分组。日常发布后文章自动进入所选分组。想改组名，在「博客分组」修改名称；想改侧栏顺序，在「博客导航」添加所需条目并拖动；想看日期与标题目录，点网页左上方的 ZIBO NOTES。详细操作见 [中文写作指南](blog-editor-guide.zh-CN.md)。
