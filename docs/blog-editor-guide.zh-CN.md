@@ -8,7 +8,7 @@
 2. 打开 [Pages CMS](https://app.pagescms.org/)，选择 GitHub 登录。
 3. 按页面提示安装 Pages CMS GitHub App。选择 **Only select repositories（仅选定仓库）**，只勾选 `zibojiang.github.io`；核对权限后完成安装。
 4. 在 CMS 选择 `zibojiang/zibojiang.github.io`，再选择与 GitHub Pages 发布设置一致的分支。
-5. 左侧应出现「博客文章」「博客导航」和「博客图片」。如果还提示创建配置，先检查分支是否选对、`.pages.yml` 是否已经推送，不要覆盖已有配置。[官方入门说明](https://pagescms.org/docs/quick-start/)
+5. 左侧应出现「博客文章」「博客分组」「博客导航」和「博客图片」。如果还提示创建配置，先检查分支是否选对、`.pages.yml` 是否已经推送，不要覆盖已有配置。[官方入门说明](https://pagescms.org/docs/quick-start/)
 
 第一次使用建议新建一篇简短草稿，保存后重新打开，确认标题、日期、正文和图片都正确，再开启发布。这里已完成配置准备，尚未替你登录 CMS 做真实保存或验证线上部署。
 
@@ -25,10 +25,11 @@
 1. 打开「博客文章」，新建一篇文章。**如果还没准备好公开，先关闭「发布到网站」再保存。**
 2. 填写标题，可选填副标题；日期默认使用你当前设备的本地日期，也可以选择其他日期。作者默认是 Zibo Jiang。
 3. 在「网址短名」填写简短的小写英文，例如 `ucsd-course-notes`。可以包含数字和短横线，不要输入空格、中文或 `.md`。
-4. 标签可以留空；需要时每项填写一个，例如 `UCSD`、`VLSI`、`旅行`。标签只用于文章分类，不决定左侧导航。
-5. 在「正文」写内容。普通文章可使用 **Editor** 模式：选中文字添加粗体、斜体或链接；使用编辑器的段落/标题菜单或 `/` 菜单插入标题、列表、引用、图片等。
-6. 保存前核对日期和网址短名。文件名由这两项自动生成，界面不提供手工文件名输入。例如日期为 `2026-10-27`、网址短名为 `ucsd-course-notes`，保存后文件名为 `2026-10-27-ucsd-course-notes.md`。
-7. 点击保存，等待保存成功。文章存入仓库的 `_posts` 目录。[日期字段](https://pagescms.org/docs/configuration/fields/date/)、[文件名规则](https://pagescms.org/docs/configuration/content/filename/)
+4. 在「博客分组」下拉框选一个分组，默认是 `UCSD (2026)`。需要新分组时，先按下方步骤创建并保存，再来写文章。
+5. 标签可以留空；需要时每项填写一个，例如 `UCSD`、`VLSI`、`旅行`。标签不影响文章所属分组。
+6. 在「正文」写内容。普通文章可使用 **Editor** 模式：选中文字添加粗体、斜体或链接；使用编辑器的段落/标题菜单或 `/` 菜单插入标题、列表、引用、图片等。
+7. 保存前核对日期和网址短名。文件名由这两项自动生成，界面不提供手工文件名输入。例如日期为 `2026-10-27`、网址短名为 `ucsd-course-notes`，保存后文件名为 `2026-10-27-ucsd-course-notes.md`。
+8. 点击保存，等待保存成功。文章存入仓库的 `_posts` 目录。[日期字段](https://pagescms.org/docs/configuration/fields/date/)、[文件名规则](https://pagescms.org/docs/configuration/content/filename/)
 
 保存会向当前分支提交修改，并不是只保存在当前浏览器。若选择的分支就是网站部署分支，保存已发布文章会触发现有发布流程。日期设到未来也不等于建立了定时发布任务：网站需要在相应时间之后再次构建，而且构建配置必须允许该文章显示。
 
@@ -60,18 +61,22 @@ ucsd-course-preview-ece-260a-ece-284
 ## 博客左侧怎么用
 
 - 点 **Home**，返回个人主页。
-- 点 **UCSD (2026)**，展开全部已发布文章，再点标题阅读。分组名称只是显示文字，不按年份或标签筛选。
+- 点 **UCSD (2026)** 等分组名，展开该组已发布文章，再点标题阅读。
 - 点左上方 **ZIBO NOTES**，打开完整博客列表。
 
-**平时写文章不用改导航。** 在「博客文章」写好并发布，等网站部署成功，新文章就会自动出现在分组里；没有标签也一样。
+**平时写文章不用改导航。** 写作时选好分组并发布，等网站部署成功，新文章就会自动出现在对应分组里；没有标签也一样。
 
-如果只想把 `UCSD (2026)` 改成别的名字：
+新增分组，例如 `UCSD (2027)`：
 
-1. 在 Pages CMS 打开「博客导航」。
-2. 修改「博客分组名称」这一个输入框。
-3. 保存，等网站部署完成后刷新网页。
+1. 在 Pages CMS 打开「博客分组」，点击新建。
+2. 只需填写分组名称 `UCSD (2027)`，点击 **Save**。
+3. 保存成功后，再进入「博客文章」新建或编辑文章，在分组下拉框选择它。若文章编辑页已经打开，先保存当前修改，再刷新或重新打开文章。
 
-另一个「左侧站名」输入框用于修改 `ZIBO NOTES`。Home 和文章链接由网站自动管理，无需填写网址、增删菜单或调整排序。改这两个名称不会改文章内容或网址。
+目前只预置了 `UCSD (2026)`；其他分组由你按需创建。分组按名称排列，不用填写网址或手动排文章。旧文章没有分组字段时，仍归入原来的 2026 分组，无需逐篇补填。
+
+要改分组名，在「博客分组」打开对应分组，修改名称并保存即可，文章归属和网址不变。删除分组前，先把文章改到其他组；如果仍有文章引用已删除的分组，网站会将它们放进「未分组」，保留阅读入口。
+
+「博客导航」只用于修改左上角的站名 `ZIBO NOTES`；Home 和文章链接由网站自动管理。
 
 ## 上传与插入图片
 
@@ -111,5 +116,7 @@ ucsd-course-preview-ece-260a-ece-284
 - [日期默认值实现](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/date/index.ts)：未设置字段 `default` 时，使用 `new Date()` 初始化当前设备的本地日期；本配置以 `yyyy-MM-dd` 保存。
 - [Source 模式与保存同步](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/rich-text/edit-component.tsx)：支持源码输入；富文本被修改后会同步序列化结果。
 - [上传文件命名](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/lib/utils/file.ts)：`rename: random` 使用时间和随机片段生成名称。
+- [单选引用实现](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/reference/edit-component.tsx)：文章分组使用动态 reference 下拉框，保存一个分组 ID；显示名称来自分组记录，按名称搜索。[官方引用字段文档](https://pagescms.org/docs/configuration/fields/reference/)
+- [UUID 默认值实现](https://github.com/hunvreus/pagescms/blob/6f4e860a35d934406580287e7042e5e111e207a1/fields/core/uuid/index.tsx)：新分组自动生成隐藏 ID，并用 ID 命名 YAML 文件；修改显示名称不会改变这个 ID。已核对配置和源码，尚未在你的已登录 CMS 中实际创建分组或验证下拉框刷新。
 
 在线服务以后可能更新；如果界面文字或行为发生变化，以 [官方配置文档](https://pagescms.org/docs/configuration/) 和保存后的实际文件为准。

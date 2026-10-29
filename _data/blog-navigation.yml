@@ -1,2 +1,3 @@
 title: ZIBO NOTES
-section_title: UCSD (2026)
+# Legacy posts without blog_group belong to the original group.
+default_group: a2c37f84-95fb-4d3c-8f1b-0f8d8a662026

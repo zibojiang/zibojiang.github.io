@@ -1,20 +1,51 @@
 {% assign blog_navigation = site.data.blog-navigation %}
+{% assign default_blog_group = blog_navigation.default_group | default: 'a2c37f84-95fb-4d3c-8f1b-0f8d8a662026' %}
+{% comment %}Jekyll data directories are filename/record pairs. Collect records before sorting.{% endcomment %}
+{% assign blog_groups = '' | split: '' %}
+{% for group_pair in site.data.blog_groups %}
+  {% assign group_record = group_pair | slice: 1, 1 %}
+  {% assign blog_groups = blog_groups | concat: group_record %}
+{% endfor %}
+{% assign blog_groups = blog_groups | sort_natural: 'title' %}
+{% assign blog_group_ids = blog_groups | map: 'id' %}
 <aside class="journal-sidebar" aria-label="Blog navigation">
   <a class="journal-brand" href="{{ '/blogs/' | relative_url }}">{{ blog_navigation.title | default: 'ZIBO NOTES' | escape }}</a>
   <details class="journal-navigation" open>
     <summary class="journal-menu-toggle">Menu</summary>
     <nav class="journal-menu" aria-label="Blog">
       <a href="{{ '/' | relative_url }}">Home</a>
+      {% for group in blog_groups %}
       <details class="journal-archive">
-        <summary>{{ blog_navigation.section_title | default: 'UCSD (2026)' | escape }}</summary>
+        <summary>{{ group.title | escape }}</summary>
         <ul>
+          {% assign group_has_posts = false %}
           {% for entry in site.posts %}
+            {% assign entry_group = entry.blog_group | default: default_blog_group %}
+            {% if entry_group == group.id %}
+              {% assign group_has_posts = true %}
           <li><a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a></li>
-          {% else %}
-          <li>暂无已发布文章</li>
+            {% endif %}
           {% endfor %}
+          {% unless group_has_posts %}
+          <li>暂无已发布文章</li>
+          {% endunless %}
         </ul>
       </details>
+      {% endfor %}
+      {%- capture ungrouped_links -%}
+        {%- for entry in site.posts -%}
+          {%- assign entry_group = entry.blog_group | default: default_blog_group -%}
+          {%- unless blog_group_ids contains entry_group -%}
+          <li><a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a></li>
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {% if ungrouped_links != '' %}
+      <details class="journal-archive">
+        <summary>未分组</summary>
+        <ul>{{ ungrouped_links }}</ul>
+      </details>
+      {% endif %}
     </nav>
   </details>
 </aside>

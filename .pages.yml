@@ -1,5 +1,5 @@
 # Pages CMS 2.x. Official configuration: https://pagescms.org/docs/configuration/
-# The blog collection, sidebar navigation, and upload folder are editable here.
+# Blog posts, groups, the sidebar name, and the upload folder are editable here.
 media:
   - name: blog_images
     label: 博客图片
@@ -38,6 +38,18 @@ content:
       - name: subtitle
         label: 副标题（可留空）
         type: string
+      - name: blog_group
+        label: 博客分组
+        type: reference
+        required: true
+        default: a2c37f84-95fb-4d3c-8f1b-0f8d8a662026
+        description: 选择这篇文章放在哪个分组。需要新分组时，先到「博客分组」添加并保存，再回来选择。
+        options:
+          collection: blog_groups
+          multiple: false
+          search: title
+          value: "{fields.id}"
+          label: "{primary}"
       - name: date
         label: 文章日期
         type: date
@@ -54,7 +66,7 @@ content:
         label: 标签（可留空）
         type: string
         list: true
-        description: 用于标记文章主题，例如 VLSI 或旅行；不用填写也会自动出现在左侧博客分组中。
+        description: 可选，用于标记文章主题，例如 VLSI 或旅行；文章放在哪一组由上面的「博客分组」决定。
       - name: slug
         label: 网址短名（英文）
         type: string
@@ -84,6 +96,39 @@ content:
           media: blog_images
           rename: random
 
+  - name: blog_groups
+    label: 博客分组
+    type: collection
+    path: _data/blog_groups
+    format: yaml
+    subfolders: false
+    filename:
+      template: "{fields.id}.yml"
+      field: false
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields: [title]
+      search: [title]
+      sort: [title]
+      default:
+        sort: title
+        order: asc
+    fields:
+      - name: id
+        type: uuid
+        hidden: true
+        required: true
+        options:
+          editable: false
+          generate: false
+      - name: title
+        label: 分组名称
+        type: string
+        required: true
+        description: 例如 UCSD (2027)。保存后，就能在写文章时选择它。修改名称不会改变已有文章的归属。
+
   - name: blog_navigation
     label: 博客导航
     type: file
@@ -100,12 +145,6 @@ content:
         required: true
         default: ZIBO NOTES
         description: 显示在左上角；点击站名可返回博客列表。Home 固定返回个人主页，不需要设置。
-      - name: section_title
-        label: 博客分组名称
-        type: string
-        required: true
-        default: UCSD (2026)
-        description: 所有已发布博客都会自动列在这个分组里。想改名称时只改这里；平时写文章不需要修改导航。
 
 settings:
   content:
