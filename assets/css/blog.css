@@ -75,12 +75,13 @@ html .journal-site a:hover { color: var(--journal-ink); text-decoration: underli
   align-items: start;
 }
 
-.journal-site .journal-sidebar { min-width: 0; padding-top: 8px; }
-.journal-site .journal-brand { display: inline-block; font-size: 16px; font-weight: 700; line-height: 1.25; }
-.journal-site .journal-navigation { margin-top: 28px; }
+/* Match Bibliophile's title margin (.67em at 16px) and 20px nav spacer. */
+.journal-site .journal-sidebar { min-width: 0; padding-top: 10.72px; }
+.journal-site .journal-brand { display: block; width: fit-content; font-size: 16px; font-weight: 700; line-height: 1.125; }
+.journal-site .journal-navigation { margin-top: 30.72px; }
 .journal-site .journal-menu-toggle { display: none; }
 .journal-site .journal-menu { display: grid; gap: 20px; }
-.journal-site .journal-menu > a, .journal-site .journal-archive > summary { width: fit-content; font-size: 14.4px; line-height: 1.6; text-transform: uppercase; }
+.journal-site .journal-menu > a, .journal-site .journal-archive > summary { width: fit-content; font-size: 14.4px; line-height: 1.6; letter-spacing: .04em; text-transform: uppercase; }
 .journal-site .journal-archive > summary { cursor: pointer; list-style: none; }
 .journal-site .journal-archive > summary::-webkit-details-marker { display: none; }
 .journal-site .journal-archive > summary::after {
@@ -119,13 +120,13 @@ html .journal-site a:hover { color: var(--journal-ink); text-decoration: underli
   line-height: 1.125;
   overflow-wrap: anywhere;
 }
-.journal-site .journal-article-header { margin-bottom: 30px; }
-.journal-site .journal-article-header .journal-date { margin-top: 72px; margin-bottom: 0; }
+.journal-site .journal-article-header { margin-bottom: 24px; }
+.journal-site .journal-article-header .journal-date { margin-top: 73px; margin-bottom: 0; }
 .journal-site .journal-date { font-size: 23.2px; line-height: 1.4; }
 .journal-site .journal-subtitle { margin-top: 18px; margin-bottom: 0; color: var(--journal-muted); font-size: 16px; }
 .journal-site .journal-content { font-size: 23.2px; line-height: 1.4; overflow-wrap: break-word; }
 .journal-site .journal-content > * { margin-block: 0 24px; }
-.journal-site .journal-content p { margin-bottom: 28px; }
+.journal-site .journal-content p { margin-bottom: 24px; }
 .journal-site .journal-content h2, .journal-site .journal-content h3, .journal-site .journal-content h4 {
   margin: 28px 0 24px;
   font-weight: 400;
@@ -171,12 +172,11 @@ html .journal-site a:hover { color: var(--journal-ink); text-decoration: underli
 .journal-site .journal-content th, .journal-site .journal-content td { padding: 12px 16px; border: 1px solid var(--journal-line); text-align: left; }
 .journal-site .journal-content iframe, .journal-site .journal-content video { max-width: 100%; }
 
-.journal-site .journal-index-header { margin-bottom: 64px; }
-.journal-site .journal-intro { margin-top: 20px; margin-bottom: 0; color: var(--journal-muted); font-size: 16px; }
 .journal-site .journal-post-list { margin: 0; padding: 0; list-style: none; }
 .journal-site .journal-post-preview + .journal-post-preview { margin-top: 46px; padding-top: 46px; border-top: 1px solid var(--journal-line); }
-.journal-site .journal-post-title { margin: 0 0 20px; font-size: 32px; font-style: italic; font-weight: 400; line-height: 1.125; overflow-wrap: anywhere; }
-.journal-site .journal-post-preview .journal-date { font-size: 23.2px; margin-bottom: 24px; }
+.journal-site .journal-post-title { margin: 0; font-size: 32px; font-style: italic; font-weight: 400; line-height: 1.125; overflow-wrap: anywhere; }
+.journal-site .journal-post-preview header { margin-bottom: 24px; }
+.journal-site .journal-post-preview .journal-date { font-size: 23.2px; margin-top: 73px; margin-bottom: 0; }
 .journal-site .journal-excerpt { font-size: 23.2px; line-height: 1.4; overflow-wrap: anywhere; }
 .journal-site .journal-read-more { display: inline-block; font-size: 14.4px; text-decoration: underline; text-underline-offset: .25em; }
 .journal-site .journal-preview-image { display: block; margin-bottom: 30px; }
@@ -217,8 +217,8 @@ html .journal-site a:hover { color: var(--journal-ink); text-decoration: underli
   .journal-site .journal-content h3 { font-size: 1.15em; }
   .journal-site .journal-content h4 { font-size: 1em; }
   .journal-site .journal-content p { margin-bottom: 28px; }
-  .journal-site .journal-index-header { margin-bottom: 56px; }
-  .journal-site .journal-intro { font-size: 21px; }
+  .journal-site .journal-post-preview .journal-date { margin-top: 44px; font-size: 23px; }
+  .journal-site .journal-post-preview header { margin-bottom: 36px; }
   .journal-site .journal-post-title { font-size: 29px; }
   .journal-site .journal-excerpt { font-size: 21px; }
   .journal-site .journal-read-more { font-size: 18px; }

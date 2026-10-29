@@ -114,7 +114,7 @@
 
   {% if layout.layout-css %}
     {% for css in layout.layout-css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
+      <link rel="stylesheet" href="{{ css | relative_url }}?v={{ site.time | date: '%s' }}">
     {% endfor %}
   {% endif %}
 

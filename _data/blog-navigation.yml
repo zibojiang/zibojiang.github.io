@@ -1,0 +1,18 @@
+title: ZIBO NOTES
+items:
+  - label: Home
+    url: /
+  - label: Blogs
+    url: /blogs/
+  - label: UCSD
+    tag: UCSD
+  - label: VLSI
+    tag: VLSI
+  - label: Digital Design
+    tag: Digital Design
+  - label: NPU
+    tag: NPU
+  - label: Course Notes
+    tag: Course Notes
+show_counts: false
+auto_tags: true

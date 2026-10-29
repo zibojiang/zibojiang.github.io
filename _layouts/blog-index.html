@@ -1,10 +1,7 @@
 ---
 layout: blog-base
 ---
-<header class="journal-index-header">
-  <h1 class="journal-title">{{ page.title | escape }}</h1>
-  {% if page.description %}<p class="journal-intro">{{ page.description | escape }}</p>{% endif %}
-</header>
+<h1 class="journal-visually-hidden">{{ page.title | escape }}</h1>
 {{ content }}
 {% if site.posts.size > 0 %}
 <ol class="journal-post-list" role="list">
