@@ -2,9 +2,12 @@
   <img class="home-profile-photo" src="{{ '/assets/img/Zibo%20Jiang.png' | relative_url }}" alt="Zibo Jiang at the Día de los Muertos celebration in San Diego" width="706" height="941" decoding="async">
   <div class="home-profile-summary">
     <h2 id="home-profile-name">Zibo Jiang</h2>
-    <p class="home-profile-role">M.S. student<br>Electronic Circuits and Systems</p>
-    <p>University of California, San Diego</p>
-    {% if site.social-network-links.email %}<p class="home-profile-contact"><a href="mailto:{{ site.social-network-links.email | escape }}">{{ site.social-network-links.email | escape }}</a></p>{% endif %}
+    <div class="home-profile-facts">
+      <p>M.S. student</p>
+      <p>Electronic Circuits and Systems</p>
+      <p>University of California, San Diego</p>
+      {% if site.social-network-links.email %}<p class="home-profile-contact"><a href="mailto:{{ site.social-network-links.email | escape }}">{{ site.social-network-links.email | replace: '@', ' [at] ' | replace: '.', ' [.] ' | escape }}</a></p>{% endif %}
+    </div>
     {% include home/profile-social.html %}
   </div>
 </div>
