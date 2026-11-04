@@ -1,0 +1,18 @@
+# Homepage icon order matches the reference: CV, LinkedIn, Scholar, email, GitHub.
+# Add your own URL to enable an item. Empty URLs are hidden.
+# Email and GitHub fall back to the existing social-network-links in _config.yml.
+- label: CV
+  icon: file-text
+  url: "/assets/files/Zibo-Jiang-CV.pdf"
+- label: LinkedIn
+  icon: linkedin
+  url: "https://www.linkedin.com/in/zibo-jiang"
+- label: Google Scholar
+  icon: graduation-cap
+  url: ""
+- label: Email
+  icon: mail
+  url: ""
+- label: GitHub
+  icon: github
+  url: ""

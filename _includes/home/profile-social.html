@@ -1,0 +1,20 @@
+{%- capture profile_social_items -%}
+  {%- for item in site.data.profile-links -%}
+    {%- assign profile_link = item.url | default: '' | strip -%}
+    {%- if profile_link == '' -%}
+      {%- if item.icon == 'mail' and site.social-network-links.email -%}
+        {%- assign profile_email = site.social-network-links.email | strip -%}
+        {%- if profile_email != '' -%}{%- assign profile_link = profile_email | prepend: 'mailto:' -%}{%- endif -%}
+      {%- elsif item.icon == 'github' and site.social-network-links.github -%}
+        {%- assign profile_github = site.social-network-links.github | strip -%}
+        {%- if profile_github != '' -%}{%- assign profile_link = profile_github | prepend: 'https://github.com/' -%}{%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if profile_link != '' -%}
+      {%- assign profile_link_prefix = profile_link | slice: 0, 1 -%}
+      {%- if profile_link_prefix == '/' -%}{%- assign profile_link = profile_link | relative_url -%}{%- endif -%}
+      <li><a href="{{ profile_link | escape }}" aria-label="{{ item.label | escape }}" title="{{ item.label | escape }}">{% include home/profile-icon.html icon=item.icon %}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if profile_social_items != '' -%}<nav class="home-profile-social" aria-label="Profile links"><ul>{{ profile_social_items }}</ul></nav>{%- endif -%}

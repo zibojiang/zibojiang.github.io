@@ -1,0 +1,24 @@
+<div class="home-profile">
+  <img class="home-profile-photo" src="{{ '/assets/img/Zibo%20Jiang.png' | relative_url }}" alt="Zibo Jiang at the Día de los Muertos celebration in San Diego" width="706" height="941" decoding="async">
+  <div class="home-profile-summary">
+    <h2 id="home-profile-name">Zibo Jiang</h2>
+    <p class="home-profile-role">M.S. student<br>Electronic Circuits and Systems</p>
+    <p>University of California, San Diego</p>
+    {% if site.social-network-links.email %}<p class="home-profile-contact"><a href="mailto:{{ site.social-network-links.email | escape }}">{{ site.social-network-links.email | escape }}</a></p>{% endif %}
+    {% include home/profile-social.html %}
+  </div>
+</div>
+
+<div class="home-profile-bio">
+  <p>Hi! I'm Zibo Jiang (江子博), an M.S. student in the Electronic Circuits and Systems track at the <strong>University of California, San Diego (UCSD)</strong>, Fall 2026. I earned my B.Eng. in Electrical Engineering at East China Normal University, Shanghai, China in 2026.</p>
+  <p>My research interests include <strong>AI hardware accelerators and architectures</strong> (CNNs, Memristor CIM), <strong>domain-specific architectures</strong>, <strong>hardware/software co-design</strong>, and <strong>digital IC design and FPGA development</strong>. I work on the end-to-end flow for AI hardware systems, bridging the gap between algorithms and physical implementation—from neural network modeling to RTL design and FPGA prototyping. Cool！</p>
+</div>
+
+<section class="home-profile-education" aria-labelledby="home-education-title">
+  <h3 id="home-education-title">Education</h3>
+  <ul>
+    <li><strong>M.S. in Computer Engineering</strong>, UC San Diego</li>
+    <li><strong>B.Eng. in Electronic Information</strong>, East China Normal University (Sep 2022 - Jul 2026)</li>
+    <li><strong>Exchange Student</strong>, UC Berkeley (Spring 2024)</li>
+  </ul>
+</section>

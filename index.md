@@ -7,6 +7,8 @@ share-title: "Zibo Jiang | UC San Diego"
 share-description: "Zibo Jiang (江子博) is an incoming M.S. student at UC San Diego, interested in AI hardware accelerators, digital IC design, RTL, and FPGA systems."
 share-img: "/assets/img/aboutme.JPG"
 comments: true
+css:
+    - "/assets/css/home-profile.css"
 cover-img:
     - "assets/img/Jinan-Perl Spring.JPG": "Jinan, China (2026-02)"
     - "assets/img/Matrouh.jpeg": "Matrouh, Egypt (2026-02)" 
@@ -20,11 +22,9 @@ cover-img:
     - "assets/img/ECNU-Sunflowers.jpg": "Sunflowers, ECNU, China (2023-05)"
 ---
 
-<section class="home-section" id="about" markdown="1">
+<section class="home-section" id="about" aria-labelledby="home-profile-name" markdown="1">
 
-## About Me
-
-{% include home/about.md show_details=true %}
+{% include home/profile.html %}
 
 </section>
 

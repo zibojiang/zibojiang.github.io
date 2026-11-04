@@ -89,7 +89,7 @@ content:
       - name: body
         label: 正文
         type: rich-text
-        description: 普通文章用 Editor；公式、Liquid 或复杂 Markdown 请先切 Source 编辑，并避免来回切换。编辑器预览不等于网站最终效果。
+        description: 普通文章用 Editor，段首不用空格缩进；若正文出现灰色代码框，请改回普通段落。公式、Liquid 或复杂 Markdown 请用 Source，并避免来回切换。编辑器预览不等于网站最终效果。
         options:
           format: markdown
           switcher: true
