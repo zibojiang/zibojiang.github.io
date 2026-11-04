@@ -1,5 +1,5 @@
 ---
-title: 圣地亚哥墨西哥亡灵节小记
+title: Day of the Dead
 blog_group: f4e7a9df-40b3-47b0-942e-bc27839f01ce
 date: 2026-11-03
 author: Zibo Jiang
