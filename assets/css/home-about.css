@@ -129,13 +129,6 @@ html {
   }
 }
 
-.home-info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
   .about-photo-wrapper {
     margin-bottom: 2rem;
     text-align: center;
@@ -150,12 +143,6 @@ html {
     box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
   }
   
-  @media (max-width: 767px) {
-    .home-info-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
 /* Homepage hero navigation overlay */
 .navbar-custom.navbar-overlay {
   padding-top: 0;
@@ -476,23 +463,20 @@ html[data-theme="dark"] .highlight .nf {
   color: #d2a8ff;
 }
 
-html[data-theme="dark"] .form-control,
-html[data-theme="dark"] #nav-search-input {
+html[data-theme="dark"] .form-control {
   color: var(--theme-text-col);
   border-color: var(--theme-border-col);
   background-color: var(--theme-surface-bg);
 }
 
-html[data-theme="dark"] .form-control:focus,
-html[data-theme="dark"] #nav-search-input:focus {
+html[data-theme="dark"] .form-control:focus {
   color: var(--theme-text-col);
   border-color: var(--theme-focus-col);
   background-color: var(--theme-surface-alt-bg);
   box-shadow: 0 0 0 0.2rem rgb(121 191 255 / 20%);
 }
 
-html[data-theme="dark"] .form-control::placeholder,
-html[data-theme="dark"] #nav-search-input::placeholder {
+html[data-theme="dark"] .form-control::placeholder {
   color: var(--theme-muted-col);
 }
 

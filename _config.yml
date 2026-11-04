@@ -1,155 +1,80 @@
-# Name of website
+# 网站身份、导航和链接
 title: Zibo Jiang
-# Your name to show in the footer
 author: Zibo Jiang
-
-# Production site URL
 url: "https://zibojiang.github.io"
 baseurl: ""
-language: "en"
-
-# --- List of links in the navigation bar --- #
+language: en
 navbar-links:
   About Me: "/#about"
   News: "/#news"
   Projects: "/#projects"
   Honors: "/#honors"
   Blogs: "/blogs/"
-  
-# --- Logo --- #
-# Image to show in the navigation bar - works best with a square image.Remove this parameter if you don't want an image in the navbar
-#avatar: "/assets/img/ziboj.JPG"
-# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
 
-# If you want to have an image logo in the top-left corner instead of having the title of the website,then specify the following parameter
-#title-img: /path/to/image
-
-# --- Footer social media links --- #
-# Select the social network links that you want to show in the footer.
-# Uncomment the links you want to show and add your information to each one.
+# 页脚链接；首页图标的 CV / LinkedIn / Scholar 在 _data/profile-links.yml
 social-network-links:
   email: "zibojiang@ucsd.edu"
   google-scholar: ""
   github: zibojiang
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-#  twitter: daattali
-#  youtube: c/daattali
-#  instagram: deanat78
-#  telephone: +14159998888
-#  ORCID: your ORCID ID
-#  discord: invite/invite_code or users/userid 
-
-# If you want your website to generate an RSS feed, provide a description
-# The URL for the feed will be https://<your_website>/feed.xml
+  rss: true
 rss-description: Follow by recent activities.
-
-# --- General options --- #
-# Select which social network share links to show in posts
 share-links-active:
-#   twitter: true
-#   facebook: true
-#   linkedin: true
-#   vk: false
-
-# How to display the link to your website in the footer
-# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
-# Whether or not to show an excerpt for every blog post in the feed page
 feed_show_excerpt: true
-# Whether or not to show a list of tags below each post preview in the feed page
 feed_show_tags: true
-# Add a search button to the navbar
-post_search: false
-# Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
 edit_page_button: true
-
-# The keywords to associate with your website, for SEO purposes
 keywords: "zibojiang,zibo,jiang,homepage,scholar,ee,electrical and computer engineering,ucsd,ecnu"
 
-# --- Colours / background image --- #
-navbar-col: "#faf9f7"         #导航栏的背景颜色#
-navbar-text-col: "#3d3929"    #导航栏里文字的背景颜色#
-navbar-border-col: "rgba(194, 113, 79, 0.2)"  #导航栏下方横线的背景颜色#
-page-col: "#faf9f7"           #大背景颜色#
-text-col: "#404040"           #正文里文字的背景颜色#
-link-col: "#008AFF"           #超链接的背景颜色#
-hover-col: "#99CCCC"          #鼠标放上，链接变成背景颜色#
-footer-col: "#faf9f7"         #页脚的背景颜色#
-footer-text-col: "#777777"      
+# 浅色主题；深色模式和导航覆盖样式在 assets/css/home-about.css
+navbar-col: "#faf9f7"
+navbar-text-col: "#3d3929"
+navbar-border-col: "rgba(194, 113, 79, 0.2)"
+page-col: "#faf9f7"
+text-col: "#404040"
+link-col: "#008AFF"
+hover-col: "#99CCCC"
+footer-col: "#faf9f7"
+footer-text-col: "#777777"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
-
-# Alternatively, the navbar, footer, and page background can be set to an image instead of colour
-#navbar-img: "/assets/img/bgimage.png"
-#footer-img: "/assets/img/bgimage.png"
-#page-img: "/assets/img/bgimage.png"
-
-# Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
 mobile-theme-col: "#0085A1"
 
-# To use giscus comments:
-# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository, 
-# (2) Install the giscus app in your repository (details at https://giscus.app),
-# (3) Fill in *all* the parameters below 
-# See more details about giscus and each of the following parameters at https://giscus.app
-#giscus:
- #hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
- #repository: zibojiang/zibojiang.github.io # GitHub username/repository eg. "username/repository"
- #repository-id: R_kgDOHq7qCQ # ID of your repository, retrieve this info from https://giscus.app
- #category: Announcements # Category name of your GitHub Discussion posts
- #category-id: DIC_kwDOHq7qCc4CQREd # ID of your category, retrieve this info from https://giscus.app
- #mapping: url
- #reactions-enabled: 1
- #emit-metadata: 0
- #theme: light
-
-# --- Misc --- #
-
-# Ruby Date Format to show dates of posts
+# Jekyll 构建与现有文章网址：不要随意修改 permalink
 date_format: "%B %-d, %Y"
-# Facebook App ID
-#fb_app_id: ""
-
-# --- You don't need to touch anything below here (but you can if you want) --- #
-# Output options (more information on Jekyll's site)
-timezone: "America/Los_Angeles"
+timezone: America/Los_Angeles
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 20
 kramdown:
   input: GFM
-
-# Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
-      path: "" # any file that's not a post will be a "page" layout by default
+      layout: post
+      comments: true
+      social-share: true
+  - scope:
+      path: ""
     values:
-      layout: "page"
+      layout: page
 
-# Exclude these files from production site
+# 草稿/说明/开发文件不进入公开网站；公开仓库里源码仍可被看到
 exclude:
-  - CHANGELOG.md
-  - CNAME
   - Gemfile
   - Gemfile.lock
+  - beautiful-jekyll-theme.gemspec
   - LICENSE
   - README.md
-  - screenshot.png
   - docs/
-  # Reference WordPress source is kept locally; it is not part of the Jekyll site.
-  - bibliophile-wpcom-1.0.4/
+  - drafts/
   - .pages.yml
+  - .vscode/
+  - .agents/
+  - .codex/
 
 plugins:
   - jekyll-paginate
@@ -158,3 +83,6 @@ site-css:
   - "/assets/css/home-about.css"
 site-js:
   - "/assets/js/theme-toggle.js"
+
+# 当前没有配置评论服务。将来如需 Giscus，在此添加 giscus 设置；
+# 只有 page.comments 为 true 且 repository、hostname 已配置时才加载。

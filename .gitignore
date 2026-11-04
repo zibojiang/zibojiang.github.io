@@ -1,0 +1,13 @@
+# Local Jekyll output and dependency caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+
+# Local agent state and operating-system metadata
+.agents/
+.codex/
+.DS_Store
+Thumbs.db
