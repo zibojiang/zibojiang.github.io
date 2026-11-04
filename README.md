@@ -33,7 +33,7 @@
 
 ## 改样式
 
-- 主页照片、简介、Education：assets/css/home-profile.css，仅首页加载。
+- 主页正文与标题字号、照片、简介、Education：assets/css/home-profile.css，仅首页加载。正文在 .home-section 中设为 17px，行高为字号的 1.5 倍。
 - Blog 目录和文章：assets/css/blog.css，仅 Blog 布局加载。
 - 公共深色模式、导航、独立 About 照片：assets/css/home-about.css。
 - 原主题正文基础字体和字号：assets/css/beautifuljekyll.css。
