@@ -2,7 +2,7 @@
   <img class="home-profile-photo" src="{{ '/assets/img/Zibo%20Jiang.png' | relative_url }}" alt="Zibo Jiang at the Día de los Muertos celebration in San Diego" width="706" height="941" decoding="async">
   <div class="home-profile-summary">
     <h2 id="home-profile-name">Zibo Jiang</h2>
-    <p class="home-profile-role">M.S. student<br>Electronic Circuits and Systems</p>
+    <p class="home-profile-role">M.S. student<br>Electronic System and Circuit</p>
     <p>University of California, San Diego</p>
     {% if site.social-network-links.email %}<p class="home-profile-contact"><a href="mailto:{{ site.social-network-links.email | escape }}">{{ site.social-network-links.email | escape }}</a></p>{% endif %}
     {% include home/profile-social.html %}
@@ -10,15 +10,33 @@
 </div>
 
 <div class="home-profile-bio">
-  <p>Hi! I'm Zibo Jiang (江子博), an M.S. student in the Electronic Circuits and Systems track at the <strong>University of California, San Diego (UCSD)</strong>, Fall 2026. I earned my B.Eng. in Electrical Engineering at East China Normal University, Shanghai, China in 2026.</p>
+  <p>Hi! I'm Zibo Jiang (江子博), an M.S. student in Electronic System and Circuit at the <strong>University of California, San Diego (UCSD)</strong>, Fall 2026. I earned my B.Eng. in Electrical Engineering at East China Normal University, Shanghai, China in 2026.</p>
   <p>My research interests include <strong>AI hardware accelerators and architectures</strong>, domain-specific architectures, hardware/software co-design, and digital IC design and FPGA development. I work on the end-to-end flow for AI hardware systems, bridging the gap between algorithms and physical implementation—from neural network modeling to RTL design and FPGA prototyping. Cool！</p>
 </div>
 
 <section class="home-profile-education" aria-labelledby="home-education-title">
   <h3 id="home-education-title">Education</h3>
-  <ul>
-    <li><strong>M.S. in Computer Engineering</strong>, UC San Diego</li>
-    <li><strong>B.Eng. in Electrical Engineering</strong>, East China Normal University (Sep 2022 - Jul 2026)</li>
-    <li><strong>Exchange Student</strong>, UC Berkeley (Spring 2024)</li>
+  <ul role="list">
+    <li>
+      <p class="home-education-school"><strong>University of California, San Diego</strong></p>
+      <div class="home-education-details">
+        <p>Master of Science in Electronic System and Circuit</p>
+        <p class="home-education-period">Fall 2026 &ndash; Present</p>
+      </div>
+    </li>
+    <li>
+      <p class="home-education-school"><strong>East China Normal University, Shanghai, China</strong></p>
+      <div class="home-education-details">
+        <p>Bachelor of Engineering in Electrical Engineering</p>
+        <p class="home-education-period">Sep 2022 &ndash; Jul 2026</p>
+      </div>
+    </li>
+    <li>
+      <p class="home-education-school"><strong>University of California, Berkeley</strong></p>
+      <div class="home-education-details">
+        <p>Exchange Student</p>
+        <p class="home-education-period">Spring 2024</p>
+      </div>
+    </li>
   </ul>
 </section>

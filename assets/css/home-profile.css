@@ -109,13 +109,40 @@ html[data-theme="dark"] .home-profile-social {
 }
 
 .home-profile-education ul {
+  list-style: none;
   margin: 0;
-  padding-left: 1.25rem;
+  padding: 0;
 }
 
 .home-profile-education li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   line-height: 1.6;
+}
+
+.home-profile-education li:last-child {
+  margin-bottom: 0;
+}
+
+.home-profile-education p {
+  margin: 0;
+  line-height: inherit;
+}
+
+.home-profile-education .home-education-school {
+  margin-bottom: 0.25rem;
+}
+
+.home-education-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+}
+
+.home-education-period {
+  justify-self: end;
+  font-style: italic;
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
@@ -145,5 +172,13 @@ html[data-theme="dark"] .home-profile-social {
 
   .home-profile-social ul {
     justify-content: center;
+  }
+
+  .home-education-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-education-period {
+    justify-self: start;
   }
 }
