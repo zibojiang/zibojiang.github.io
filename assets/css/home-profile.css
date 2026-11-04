@@ -145,12 +145,8 @@ html[data-theme="dark"] .home-profile-social {
 }
 
 .home-profile-education li {
-  margin-bottom: 0.75rem;
+  margin: 0;
   line-height: inherit;
-}
-
-.home-profile-education li:last-child {
-  margin-bottom: 0;
 }
 
 .home-profile-education p {
