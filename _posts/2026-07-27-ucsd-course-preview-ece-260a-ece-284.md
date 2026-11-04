@@ -1,13 +1,14 @@
 ---
 layout: post
-title: UCSD 选课与课程预习记录：ECE 260A 与 ECE 284
-subtitle: 从数字前端到 CNN NPU
+title: ECE 260A & ECE 284
+subtitle: From digital front end to CNN NPU
 date: 2026-07-27
 author: Zibo Jiang
 tags:
   - UCSD (2026)
 slug: ucsd-course-preview-ece-260a-ece-284
 published: true
+blog_group: a2c37f84-95fb-4d3c-8f1b-0f8d8a662026
 ---
 > 这篇文章记录的是我在正式上课前对两门课程的初步了解，以及现阶段的学习计划。很多认识还停留在预习阶段，等课程开始后，我会继续补充课堂内容、项目进展和自己的理解。
 

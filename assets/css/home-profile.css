@@ -34,6 +34,13 @@
   overflow-wrap: anywhere;
 }
 
+html .home-profile-contact a,
+html .home-profile-contact a:hover,
+html .home-profile-contact a:focus,
+html .home-profile-contact a:visited {
+  color: inherit;
+}
+
 .home-profile-social {
   --profile-icon-color: #636363;
   margin-top: 1.5rem;
