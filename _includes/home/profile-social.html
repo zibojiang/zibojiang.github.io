@@ -31,4 +31,4 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endcapture -%}
-{%- if profile_social_items != '' -%}<nav class="home-profile-social" aria-label="Profile links"><ul>{{ profile_social_items }}</ul></nav>{%- endif -%}
+{%- if profile_social_items != '' -%}<nav class="home-profile-social" aria-label="{{ include.label | default: 'Profile links' | escape }}"><ul>{{ profile_social_items }}</ul></nav>{%- endif -%}

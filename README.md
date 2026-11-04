@@ -7,7 +7,7 @@
 - **个人介绍和研究兴趣**：[_includes/home/about.md](_includes/home/about.md)。这是唯一的简介正文，主页和独立 About 页共用；用普通 Markdown 写段落，双星号表示加粗。
 - **照片右侧短简介、Education**：[_includes/home/profile.html](_includes/home/profile.html)。主要改文字和日期，保留 HTML 标签。
 - **首页照片**：[assets/img/Zibo Jiang.png](assets/img/Zibo%20Jiang.png)。更换文件时尽量保持同样比例；图片位置写在 profile.html 中。
-- **首页 CV、LinkedIn、Scholar 图标链接**：[_data/profile-links.yml](_data/profile-links.yml)。填入网址后显示，留空时隐藏；邮箱和 GitHub 默认沿用 _config.yml。
+- **短简介与页脚的图标链接**：[_data/profile-links.yml](_data/profile-links.yml)。两处共用 CV、LinkedIn、Scholar 等链接；填入网址后显示，留空时隐藏；邮箱和 GitHub 默认沿用 _config.yml。
 - **CV 文件**：[assets/files/Zibo-Jiang-CV.pdf](assets/files/Zibo-Jiang-CV.pdf)。用同名新 PDF 替换即可保持图标网址不变。
 - **风景轮播、首页标题与分享说明**：[index.md](index.md) 顶部的配置。
 - **News / Projects / Honors**：分别编辑 [_includes/home/news.md](_includes/home/news.md)、[projects.md](_includes/home/projects.md)、[honors.md](_includes/home/honors.md)。
@@ -35,7 +35,7 @@
 
 - 主页正文与标题字号、照片、简介、Education：assets/css/home-profile.css，仅首页加载。正文在 .home-section 中设为 17px，行高为字号的 1.5 倍。
 - Blog 目录和文章：assets/css/blog.css，仅 Blog 布局加载。
-- 公共深色模式、导航、独立 About 照片：assets/css/home-about.css。
+- 公共深色模式、导航、短简介与页脚的图标、独立 About 照片：assets/css/home-about.css。
 - 原主题正文基础字体和字号：assets/css/beautifuljekyll.css。
 
 这几份 CSS 的作用范围不同，保持分开可避免改 Blog 时影响主页。字号用 font-size，行高用 line-height。

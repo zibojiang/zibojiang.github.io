@@ -1,4 +1,4 @@
-# Homepage icon order matches the reference: CV, LinkedIn, Scholar, email, GitHub.
+# Shared profile/footer icons: CV, LinkedIn, Scholar, email, GitHub.
 # Add your own URL to enable an item. Empty URLs are hidden.
 # Email and GitHub fall back to the existing social-network-links in _config.yml.
 - label: CV

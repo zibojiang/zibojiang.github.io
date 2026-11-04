@@ -326,6 +326,69 @@ html[data-theme="dark"] footer a:focus {
   color: var(--theme-footer-hover);
 }
 
+/* Shared SVG links for the profile and the site footer. */
+.home-profile-social {
+  --profile-icon-color: #636363;
+  margin-top: 1.5rem;
+}
+
+.home-profile-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* 12px between links + 2px padding per side = 16px between SVGs. */
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html nav.home-profile-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  color: var(--profile-icon-color);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.home-profile-social svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+html nav.home-profile-social a:hover,
+html nav.home-profile-social a:focus-visible {
+  color: var(--theme-link-col);
+}
+
+html nav.home-profile-social a:focus-visible {
+  outline: 2px solid var(--theme-focus-col);
+  outline-offset: 3px;
+}
+
+html[data-theme="dark"] .home-profile-social {
+  --profile-icon-color: var(--theme-muted-col);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html nav.home-profile-social a {
+    transition: none;
+  }
+}
+
+.beautiful-jekyll-footer .home-profile-social {
+  margin: 0 0 1.25rem;
+}
+
+.beautiful-jekyll-footer .home-profile-social ul {
+  justify-content: center;
+}
+
 html[data-theme="dark"] .post-preview {
   border-bottom-color: var(--theme-border-col);
 }
